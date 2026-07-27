@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
+	import HeroSlider from '$lib/components/home/HeroSlider.svelte';
+	import Testimonials from '$lib/components/home/Testimonials.svelte';
+	import RecentlyViewed from '$lib/components/product/RecentlyViewed.svelte';
 	import { products } from '$lib/data/products';
 
 	let lang = $derived($page.params.lang || 'en');
