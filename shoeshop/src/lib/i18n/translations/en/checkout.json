@@ -1,0 +1,10 @@
+{
+	"checkout": "Checkout",
+	"checkoutWithPayPal": "Checkout with PayPal",
+	"subtotal": "Subtotal",
+	"total": "Total",
+	"emptyCart": "Your cart is empty.",
+	"continueShopping": "Continue Shopping",
+	"remove": "Remove",
+	"quantity": "Qty"
+}

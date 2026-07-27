@@ -1,0 +1,17 @@
+{
+	"addToCart": "Add to Cart",
+	"soldOut": "Sold Out",
+	"selectSize": "Select Size",
+	"color": "Color",
+	"size": "Size",
+	"description": "Description",
+	"reviews": "Reviews",
+	"relatedProducts": "You May Also Like",
+	"category": "Category",
+	"sortBy": "Sort By",
+	"priceLowToHigh": "Price: Low to High",
+	"priceHighToLow": "Price: High to Low",
+	"newest": "Newest",
+	"bestSelling": "Best Selling",
+	"noProducts": "No products found."
+}

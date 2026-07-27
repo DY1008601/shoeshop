@@ -1,0 +1,85 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+	import { cartCount } from '$lib/stores/cart';
+
+	let mobileMenuOpen = $state(false);
+	let lang = $derived($page.params.lang || 'en');
+
+	let navLinks = $derived([
+		{ href: `/${lang}/products`, label: 'Products' },
+		{ href: `/${lang}/blog`, label: 'Blog' }
+	]);
+
+	const languages = [
+		{ code: 'en', label: 'EN' },
+		{ code: 'fr', label: 'FR' },
+		{ code: 'de', label: 'DE' },
+		{ code: 'it', label: 'IT' },
+		{ code: 'es', label: 'ES' }
+	];
+</script>
+
+<header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+		<a href={`/${lang}`} class="text-xl font-bold tracking-tight text-gray-900">
+			ShoeShop
+		</a>
+
+		<nav class="hidden items-center gap-6 md:flex">
+			{#each navLinks as link}
+				<a href={link.href} class="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900">
+					{link.label}
+				</a>
+			{/each}
+		</nav>
+
+		<div class="flex items-center gap-4">
+			<div class="hidden items-center gap-2 md:flex">
+				{#each languages as l}
+					<a
+						href={`/${l.code}${$page.url.pathname.slice(3) || '/'}`}
+						class="text-xs font-medium text-gray-500 transition-colors hover:text-gray-900"
+						class:font-bold={lang === l.code}
+						class:text-gray-900={lang === l.code}
+					>
+						{l.label}
+					</a>
+					{#if l !== languages[languages.length - 1]}
+						<span class="text-gray-300">|</span>
+					{/if}
+				{/each}
+			</div>
+
+			<a href={`/${lang}/cart`} class="relative text-gray-700 hover:text-gray-900">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+				</svg>
+				{#if $cartCount > 0}
+					<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-xs text-white">
+						{$cartCount}
+					</span>
+				{/if}
+			</a>
+
+			<button
+				class="md:hidden"
+				onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+				aria-label="Toggle menu"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	{#if mobileMenuOpen}
+		<div class="border-t border-gray-200 md:hidden">
+			{#each navLinks as link}
+				<a href={link.href} class="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50">
+					{link.label}
+				</a>
+			{/each}
+		</div>
+	{/if}
+</header>
