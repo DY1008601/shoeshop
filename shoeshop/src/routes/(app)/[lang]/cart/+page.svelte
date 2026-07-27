@@ -113,11 +113,12 @@
 				</div>
 			</div>
 
-			<button
-				class="mt-6 w-full rounded-lg bg-gray-900 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
+			<a
+				href={`/${lang}/checkout`}
+				class="mt-6 block w-full rounded-lg bg-gray-900 py-3 text-center text-sm font-semibold text-white transition hover:bg-gray-800"
 			>
 				Proceed to Checkout
-			</button>
+			</a>
 
 			<div class="mt-4 text-center">
 				<a href={`/${lang}/products`} class="text-sm text-gray-500 underline hover:text-gray-900">
