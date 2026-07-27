@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import { products } from '$lib/data/products';
 
+	let lang = $derived($page.params.lang || 'en');
+
 	interface Props {
 		onchange: (filters: Filters) => void;
 	}
@@ -15,6 +17,7 @@
 	let { onchange }: Props = $props();
 
 	let brands = $derived([...new Set(products.map((p) => p.title.split(' ')[0]))].sort());
+	let collections = $derived([...new Set(products.map((p) => p.collections.edges[0]?.node))].filter(Boolean));
 	let selectedBrands = $state<string[]>([]);
 	let minPrice = $state('');
 	let maxPrice = $state('');
@@ -54,6 +57,18 @@
 				Clear all
 			</button>
 		{/if}
+	</div>
+
+	<div>
+		<h4 class="mb-2 text-xs font-medium text-gray-500 uppercase">Collection</h4>
+		<div class="space-y-1">
+			{#each collections as col}
+				{@const count = products.filter((p) => p.collections.edges[0]?.node.handle === col!.handle).length}
+				<a href={`/${lang}/collection/${col!.handle}`} class="block text-sm text-gray-700 hover:text-gray-900 py-0.5">
+					{col!.title} <span class="text-xs text-gray-400">({count})</span>
+				</a>
+			{/each}
+		</div>
 	</div>
 
 	<div>
