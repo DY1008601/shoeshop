@@ -1,54 +1,69 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { getPost, categoryLabels } from '$lib/data/blog';
 
 	let lang = $derived($page.params.lang || 'en');
+	let slug = $derived($page.params.slug);
+	let post = $derived(getPost(slug, lang));
 </script>
 
 <svelte:head>
-	<title>How to Style White Sneakers - ShoeShop Blog</title>
-	<meta name="description" content="White sneakers are the most versatile piece in your wardrobe." />
+	<title>{post?.title || 'Blog Post'} - ShoeShop Blog</title>
+	<meta name="description" content={post?.excerpt || ''} />
+	{#if post}
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "BlogPosting",
+				headline: post.title,
+				description: post.excerpt,
+				datePublished: post.date,
+				author: { "@type": "Person", name: post.author }
+			})}
+		</script>
+	{/if}
 </svelte:head>
 
-<article class="prose prose-gray mx-auto max-w-3xl px-4 py-12">
-	<div class="mb-8">
-		<a href={`/${lang}/blog`} class="text-sm text-gray-500 hover:text-gray-900">&larr; Back to Blog</a>
+{#if !post}
+	<div class="mx-auto max-w-3xl px-4 py-16 text-center">
+		<p class="text-gray-500">Post not found.</p>
+		<a href={`/${lang}/blog`} class="mt-4 inline-block text-sm font-medium text-gray-900 underline">
+			Back to Blog
+		</a>
 	</div>
+{:else}
+	<article class="mx-auto max-w-3xl px-4 py-12">
+		<div class="mb-6">
+			<a href={`/${lang}/blog`} class="text-sm text-gray-500 hover:text-gray-900 transition">
+				&larr; Back to Blog
+			</a>
+		</div>
 
-	<div class="mb-6">
-		<span class="text-xs font-medium text-gray-500 uppercase">Style Guide</span>
-	</div>
+		<div class="mb-4">
+			<span class="text-xs font-medium text-gray-500 uppercase">
+				{categoryLabels[post.category] || post.category}
+			</span>
+		</div>
 
-	<h1>How to Style White Sneakers for Any Occasion</h1>
+		<h1 class="mb-4 text-3xl font-bold text-gray-900">{post.title}</h1>
 
-	<div class="mb-8 flex items-center gap-4 text-sm text-gray-500">
-		<time>2024-07-15</time>
-		<span>by ShoeShop Team</span>
-	</div>
+		<div class="mb-8 flex items-center gap-4 text-sm text-gray-500">
+			<time datetime={post.date}>{post.date}</time>
+			<span>by {post.author}</span>
+		</div>
 
-	<p>White sneakers have become a wardrobe staple for good reason. Their clean, minimalist design works with virtually any outfit. Here's how to style them for different occasions.</p>
+		{#if post.tags.length > 0}
+			<div class="mb-8 flex flex-wrap gap-2">
+				{#each post.tags as tag}
+					<span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
+						{tag}
+					</span>
+				{/each}
+			</div>
+		{/if}
 
-	<h2>Casual Everyday</h2>
-	<p>Pair your white sneakers with:</p>
-	<ul>
-		<li>Slim-fit jeans and a plain white tee</li>
-		<li>Chino shorts and a linen shirt for summer</li>
-		<li>Joggers and a hoodie for a relaxed look</li>
-	</ul>
-
-	<h2>Smart Casual</h2>
-	<p>White sneakers can elevate a smart casual outfit:</p>
-	<ul>
-		<li>Navy blazer, white Oxford shirt, and dark jeans</li>
-		<li>Beige chinos with a tucked-in polo shirt</li>
-		<li>A minimalist watch completes the look</li>
-	</ul>
-
-	<h2>Care Tips</h2>
-	<p>Keep your white sneakers looking fresh:</p>
-	<ol>
-		<li>Clean weekly with a soft brush and mild soap</li>
-		<li>Use a protective spray before first wear</li>
-		<li>Store with shoe trees to maintain shape</li>
-		<li>Rotate between pairs to extend lifespan</li>
-	</ol>
-</article>
+		<div class="prose prose-gray max-w-none">
+			{@html post.html}
+		</div>
+	</article>
+{/if}

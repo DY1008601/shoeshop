@@ -12,6 +12,7 @@ White sneakers have become a wardrobe staple for good reason. Their clean, minim
 ## Casual Everyday
 
 Pair your white sneakers with:
+
 - Slim-fit jeans and a plain white tee
 - Chino shorts and a linen shirt for summer
 - Joggers and a hoodie for a relaxed look
@@ -19,6 +20,7 @@ Pair your white sneakers with:
 ## Smart Casual
 
 White sneakers can elevate a smart casual outfit:
+
 - Navy blazer, white Oxford shirt, and dark jeans
 - Beige chinos with a tucked-in polo shirt
 - A minimalist watch completes the look
@@ -26,6 +28,7 @@ White sneakers can elevate a smart casual outfit:
 ## Care Tips
 
 Keep your white sneakers looking fresh:
+
 1. Clean weekly with a soft brush and mild soap
 2. Use a protective spray before first wear
 3. Store with shoe trees to maintain shape
