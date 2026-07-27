@@ -1,0 +1,10 @@
+{
+	"checkout": "Commander",
+	"checkoutWithPayPal": "Payer avec PayPal",
+	"subtotal": "Sous-total",
+	"total": "Total",
+	"emptyCart": "Votre panier est vide.",
+	"continueShopping": "Continuer les achats",
+	"remove": "Supprimer",
+	"quantity": "Qte"
+}

@@ -1,0 +1,17 @@
+{
+	"addToCart": "In den Warenkorb",
+	"soldOut": "Ausverkauft",
+	"selectSize": "Grosse wahlen",
+	"color": "Farbe",
+	"size": "Grosse",
+	"description": "Beschreibung",
+	"reviews": "Bewertungen",
+	"relatedProducts": "Das konnte Ihnen gefallen",
+	"category": "Kategorie",
+	"sortBy": "Sortieren nach",
+	"priceLowToHigh": "Preis: aufsteigend",
+	"priceHighToLow": "Preis: absteigend",
+	"newest": "Neueste",
+	"bestSelling": "Bestseller",
+	"noProducts": "Keine Produkte gefunden."
+}

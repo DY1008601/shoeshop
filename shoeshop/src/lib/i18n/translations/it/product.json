@@ -1,0 +1,17 @@
+{
+	"addToCart": "Aggiungi al carrello",
+	"soldOut": "Esaurito",
+	"selectSize": "Seleziona taglia",
+	"color": "Colore",
+	"size": "Taglia",
+	"description": "Descrizione",
+	"reviews": "Recensioni",
+	"relatedProducts": "Potrebbe piacerti anche",
+	"category": "Categoria",
+	"sortBy": "Ordina per",
+	"priceLowToHigh": "Prezzo: crescente",
+	"priceHighToLow": "Prezzo: decrescente",
+	"newest": "Piu recenti",
+	"bestSelling": "Piu venduti",
+	"noProducts": "Nessun prodotto trovato."
+}

@@ -1,0 +1,17 @@
+{
+	"addToCart": "Ajouter au panier",
+	"soldOut": "Epuise",
+	"selectSize": "Choisir la taille",
+	"color": "Couleur",
+	"size": "Taille",
+	"description": "Description",
+	"reviews": "Avis",
+	"relatedProducts": "Vous pourriez aussi aimer",
+	"category": "Categorie",
+	"sortBy": "Trier par",
+	"priceLowToHigh": "Prix: croissant",
+	"priceHighToLow": "Prix: decroissant",
+	"newest": "Nouveautes",
+	"bestSelling": "Meilleures ventes",
+	"noProducts": "Aucun produit trouve."
+}

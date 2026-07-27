@@ -1,0 +1,10 @@
+{
+	"checkout": "Vai al pagamento",
+	"checkoutWithPayPal": "Paga con PayPal",
+	"subtotal": "Subtotale",
+	"total": "Totale",
+	"emptyCart": "Il tuo carrello e vuoto.",
+	"continueShopping": "Continua lo shopping",
+	"remove": "Rimuovi",
+	"quantity": "Qta"
+}

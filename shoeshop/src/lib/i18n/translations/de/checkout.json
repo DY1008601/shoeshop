@@ -1,0 +1,10 @@
+{
+	"checkout": "Zur Kasse",
+	"checkoutWithPayPal": "Mit PayPal bezahlen",
+	"subtotal": "Zwischensumme",
+	"total": "Gesamt",
+	"emptyCart": "Ihr Warenkorb ist leer.",
+	"continueShopping": "Weiter einkaufen",
+	"remove": "Entfernen",
+	"quantity": "Menge"
+}

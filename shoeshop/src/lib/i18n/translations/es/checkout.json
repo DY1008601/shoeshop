@@ -1,0 +1,10 @@
+{
+	"checkout": "Pagar",
+	"checkoutWithPayPal": "Pagar con PayPal",
+	"subtotal": "Subtotal",
+	"total": "Total",
+	"emptyCart": "Tu carrito esta vacio.",
+	"continueShopping": "Seguir comprando",
+	"remove": "Eliminar",
+	"quantity": "Cant"
+}

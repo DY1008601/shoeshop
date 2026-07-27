@@ -1,0 +1,17 @@
+{
+	"addToCart": "Anadir al carrito",
+	"soldOut": "Agotado",
+	"selectSize": "Seleccionar talla",
+	"color": "Color",
+	"size": "Talla",
+	"description": "Descripcion",
+	"reviews": "Resenas",
+	"relatedProducts": "Tambien te puede gustar",
+	"category": "Categoria",
+	"sortBy": "Ordenar por",
+	"priceLowToHigh": "Precio: menor a mayor",
+	"priceHighToLow": "Precio: mayor a menor",
+	"newest": "Novedades",
+	"bestSelling": "Mas vendidos",
+	"noProducts": "No se encontraron productos."
+}
