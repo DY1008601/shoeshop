@@ -1,8 +1,17 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { getAllPosts, categoryLabels } from '$lib/data/blog';
+	import SkeletonBlogCard from '$lib/components/SkeletonBlogCard.svelte';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+	import { onMount } from 'svelte';
 
 	let lang = $derived($page.params.lang || 'en');
+	let loading = $state(true);
+
+	onMount(() => {
+		loading = false;
+	});
+
 	let posts = $derived(getAllPosts(lang));
 </script>
 
@@ -12,12 +21,20 @@
 </svelte:head>
 
 <div class="mx-auto max-w-4xl px-4 py-12">
+	<div class="mb-6">
+		<Breadcrumb items={[{ label: 'Home', href: `/${lang}` }, { label: 'Blog' }]} />
+	</div>
+
 	<div class="mb-8">
 		<h1 class="text-3xl font-bold text-gray-900">Blog</h1>
 		<p class="mt-2 text-gray-600">Sneaker reviews, style guides, and size guides to help you find your perfect pair.</p>
 	</div>
 
-	{#if posts.length === 0}
+	{#if loading}
+		<div class="grid gap-8 md:grid-cols-2">
+			<SkeletonBlogCard count={4} />
+		</div>
+	{:else if posts.length === 0}
 		<div class="py-16 text-center">
 			<p class="text-gray-500">No posts found in this language yet.</p>
 		</div>

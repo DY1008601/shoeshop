@@ -3,6 +3,7 @@
 	import { getPost, categoryLabels } from '$lib/data/blog';
 	import ShareButtons from '$lib/components/blog/ShareButtons.svelte';
 	import RelatedPosts from '$lib/components/blog/RelatedPosts.svelte';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 
 	let lang = $derived($page.params.lang || 'en');
 	let slug = $derived($page.params.slug);
@@ -37,9 +38,7 @@
 {:else}
 	<article class="mx-auto max-w-3xl px-4 py-12">
 		<div class="mb-6">
-			<a href={`/${lang}/blog`} class="text-sm text-gray-500 hover:text-gray-900 transition">
-				&larr; Back to Blog
-			</a>
+			<Breadcrumb items={[{ label: 'Home', href: `/${lang}` }, { label: 'Blog', href: `/${lang}/blog` }, { label: post.title }]} />
 		</div>
 
 		<div class="mb-4">

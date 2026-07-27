@@ -3,6 +3,7 @@
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
 	import { products } from '$lib/data/products';
 	import { wishlist } from '$lib/stores/wishlist';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => { wishlist.load(); });
@@ -24,6 +25,9 @@
 </svelte:head>
 
 <div class="mx-auto max-w-7xl px-4 py-12">
+	<div class="mb-6">
+		<Breadcrumb items={[{ label: 'Home', href: `/${lang}` }, { label: 'Wishlist' }]} />
+	</div>
 	<h1 class="mb-8 text-3xl font-bold text-gray-900">Wishlist</h1>
 
 	{#if items.length === 0}

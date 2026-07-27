@@ -8,6 +8,8 @@
 	import ImageZoom from '$lib/components/product/ImageZoom.svelte';
 	import ImageGallery from '$lib/components/product/ImageGallery.svelte';
 	import WishlistButton from '$lib/components/WishlistButton.svelte';
+	import SkeletonProductDetail from '$lib/components/SkeletonProductDetail.svelte';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -24,6 +26,11 @@
 	});
 
 	let lang = $derived($page.params.lang || 'en');
+	let loading = $state(true);
+
+	onMount(() => {
+		loading = false;
+	});
 
 	let product = $derived(products.find((p) => p.handle === $page.params.handle));
 
@@ -99,7 +106,11 @@
 	</script>
 </svelte:head>
 
-{#if !product}
+{#if loading}
+	<div class="mx-auto max-w-7xl px-4 py-12">
+		<SkeletonProductDetail />
+	</div>
+{:else if !product}
 	<div class="mx-auto max-w-7xl px-4 py-16 text-center">
 		<p class="text-gray-500">Product not found.</p>
 		<a href={`/${lang}/products`} class="mt-4 inline-block text-sm font-medium text-gray-900 underline">
@@ -108,13 +119,9 @@
 	</div>
 {:else}
 	<div class="mx-auto max-w-7xl px-4 py-12">
-		<nav class="mb-8 text-sm text-gray-500">
-			<a href={`/${lang}`} class="hover:text-gray-900">Home</a>
-			<span class="mx-2">/</span>
-			<a href={`/${lang}/products`} class="hover:text-gray-900">Products</a>
-			<span class="mx-2">/</span>
-			<span class="text-gray-900">{product.title}</span>
-		</nav>
+		<div class="mb-8">
+			<Breadcrumb items={[{ label: 'Home', href: `/${lang}` }, { label: 'Products', href: `/${lang}/products` }, { label: product.title }]} />
+		</div>
 
 		<div class="grid gap-8 md:grid-cols-2">
 			<div class="relative">

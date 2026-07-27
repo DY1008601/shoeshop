@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { cart } from '$lib/stores/cart';
 	import { formatPrice } from '$lib/utils/format';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -17,6 +18,9 @@
 </svelte:head>
 
 <div class="mx-auto max-w-4xl px-4 py-12">
+	<div class="mb-6">
+		<Breadcrumb items={[{ label: 'Home', href: `/${lang}` }, { label: 'Cart' }]} />
+	</div>
 	<h1 class="mb-8 text-3xl font-bold text-gray-900">Shopping Cart</h1>
 
 	{#if $cart.totalQuantity === 0}

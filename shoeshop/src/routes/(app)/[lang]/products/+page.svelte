@@ -2,10 +2,18 @@
 	import { page } from '$app/stores';
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
 	import FilterSidebar from '$lib/components/product/FilterSidebar.svelte';
+	import SkeletonCard from '$lib/components/SkeletonCard.svelte';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import type { Filters } from '$lib/components/product/FilterSidebar.svelte';
 	import { products } from '$lib/data/products';
+	import { onMount } from 'svelte';
 
 	let lang = $derived($page.params.lang || 'en');
+	let loading = $state(true);
+
+	onMount(() => {
+		loading = false;
+	});
 
 	let sortBy = $state('newest');
 	let searchQuery = $state('');
@@ -47,6 +55,10 @@
 </svelte:head>
 
 <div class="mx-auto max-w-7xl px-4 py-12">
+	<div class="mb-6">
+		<Breadcrumb items={[{ label: 'Home', href: `/${lang}` }, { label: 'Products' }]} />
+	</div>
+
 	<div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<h1 class="text-3xl font-bold text-gray-900">All Sneakers</h1>
@@ -90,7 +102,11 @@
 		</div>
 
 		<div class="flex-1">
-			{#if mobileFilterOpen}
+			{#if loading}
+				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+					<SkeletonCard count={6} />
+				</div>
+			{:else if mobileFilterOpen}
 				<div class="mb-6 rounded-xl border border-gray-200 p-4 lg:hidden">
 					<FilterSidebar onchange={(f) => (activeFilters = f)} />
 				</div>
