@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
 	import GDPRBanner from '$lib/components/GDPRBanner.svelte';
 	import BackToTop from '$lib/components/ui/BackToTop.svelte';
 	import SkipLink from '$lib/components/ui/SkipLink.svelte';
@@ -10,6 +11,7 @@
 	let lang = $derived($page.params.lang || 'en');
 	let path = $derived($page.url.pathname.replace(/^\/[a-z]{2}/, '') || '/');
 	let siteUrl = $derived(typeof window !== 'undefined' ? window.location.origin : '');
+	let routeKey = $derived($page.url.pathname);
 </script>
 
 <svelte:head>
@@ -26,7 +28,11 @@
 
 <SkipLink />
 <div id="main-content">
-	{@render children()}
+	{#key routeKey}
+		<div transition:fade={{ duration: 200 }}>
+			{@render children()}
+		</div>
+	{/key}
 </div>
 
 <GDPRBanner />

@@ -74,14 +74,17 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		onclick={handleBackdrop}
+		onkeydown={(e) => { if (e.key === 'Escape') onclose(); }}
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
 		role="dialog"
 		aria-modal="true"
 		aria-label="Quick view: {product.title}"
+		tabindex="0"
 	>
 		<div class="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white shadow-2xl">
 			<button
 				onclick={onclose}
+				aria-label="Close quick view"
 				class="absolute right-4 top-4 z-10 rounded-full bg-white p-2 text-gray-500 shadow-sm hover:text-gray-900"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

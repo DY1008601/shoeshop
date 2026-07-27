@@ -236,7 +236,7 @@
 			</div>
 		</div>
 
-		<Reviews reviews={sampleReviews} />
+		<Reviews reviews={sampleReviews} productHandle={product.handle} />
 
 		<RelatedProducts currentHandle={product.handle} category={product.collections.edges[0]?.node.handle} />
 	</div>

@@ -40,9 +40,11 @@
 	<button
 		onclick={closeZoom}
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+		aria-label="Close zoom"
 	>
 		<div
-			onclick={(e) => e.stopPropagation()}
+			role="img"
+			aria-label={alt}
 			onmousemove={moveZoom}
 			onmouseleave={() => { x = 50; y = 50; }}
 			class="relative h-[80vh] w-[80vw] max-w-2xl cursor-zoom-in overflow-hidden rounded-xl bg-gray-100"
