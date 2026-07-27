@@ -22,10 +22,6 @@
 			<h2 class="mb-4 text-lg font-semibold text-gray-900">Get in Touch</h2>
 			<div class="space-y-4 text-sm text-gray-600">
 				<div>
-					<h3 class="font-medium text-gray-900">Email</h3>
-					<p>support@shoeshop.com</p>
-				</div>
-				<div>
 					<h3 class="font-medium text-gray-900">Phone</h3>
 					<p>+1 (555) 123-4567</p>
 				</div>
@@ -52,10 +48,6 @@
 					<div>
 						<label for="name" class="block text-sm font-medium text-gray-700">Name</label>
 						<input type="text" id="name" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-gray-500 focus:outline-none" />
-					</div>
-					<div>
-						<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-						<input type="email" id="email" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-gray-500 focus:outline-none" />
 					</div>
 					<div>
 						<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
