@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
 	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
+	import HeroSlider from '$lib/components/home/HeroSlider.svelte';
+	import RecentlyViewed from '$lib/components/product/RecentlyViewed.svelte';
 	import { products } from '$lib/data/products';
 
 	let lang = $derived($page.params.lang || 'en');
@@ -13,30 +15,7 @@
 	<meta name="description" content="Discover premium sneakers at ShoeShop. Quality footwear for every style." />
 </svelte:head>
 
-<section class="relative bg-gray-900 text-white">
-	<div class="mx-auto max-w-7xl px-4 py-24 text-center md:py-32">
-		<h1 class="text-4xl font-bold tracking-tight md:text-6xl">
-			Step Into Style
-		</h1>
-		<p class="mt-4 text-lg text-gray-300 md:text-xl">
-			Discover our curated collection of premium sneakers. Built for comfort, designed for life.
-		</p>
-		<div class="mt-8 flex justify-center gap-4">
-			<a
-				href={`/${lang}/products`}
-				class="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-gray-100"
-			>
-				Shop Now
-			</a>
-			<a
-				href={`/${lang}/blog`}
-				class="rounded-lg border border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-			>
-				Read Our Blog
-			</a>
-		</div>
-	</div>
-</section>
+<HeroSlider />
 
 <section class="mx-auto max-w-7xl px-4 py-16">
 	<h2 class="mb-8 text-center text-2xl font-bold text-gray-900">Why Shop With Us</h2>
@@ -95,4 +74,8 @@
 			<NewsletterForm />
 		</div>
 	</div>
+</section>
+
+<section class="mx-auto max-w-7xl px-4 pb-16">
+	<RecentlyViewed />
 </section>

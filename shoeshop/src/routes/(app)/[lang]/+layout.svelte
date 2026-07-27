@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GDPRBanner from '$lib/components/GDPRBanner.svelte';
+	import BackToTop from '$lib/components/ui/BackToTop.svelte';
 
 	let { children, data } = $props();
 </script>
@@ -12,3 +13,4 @@
 {@render children()}
 
 <GDPRBanner />
+<BackToTop />

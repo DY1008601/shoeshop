@@ -5,10 +5,20 @@
 	import { cart } from '$lib/stores/cart';
 	import RelatedProducts from '$lib/components/product/RelatedProducts.svelte';
 	import Reviews from '$lib/components/product/Reviews.svelte';
+	import ImageZoom from '$lib/components/product/ImageZoom.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
 		cart.load();
+		try {
+			const handle = $page.params.handle;
+			if (handle) {
+				const stored = localStorage.getItem('shoeshop-recent');
+				const existing: string[] = stored ? JSON.parse(stored) : [];
+				const updated = [handle, ...existing.filter((h) => h !== handle)].slice(0, 10);
+				localStorage.setItem('shoeshop-recent', JSON.stringify(updated));
+			}
+		} catch { /* */ }
 	});
 
 	let lang = $derived($page.params.lang || 'en');
@@ -105,15 +115,9 @@
 		</nav>
 
 		<div class="grid gap-8 md:grid-cols-2">
-			<div class="relative aspect-square overflow-hidden rounded-xl bg-gray-100">
+			<div class="aspect-square overflow-hidden rounded-xl">
 				{#if product.featuredImage}
-					<img
-						src={product.featuredImage.url}
-						alt={product.featuredImage.altText || product.title}
-						width={product.featuredImage.width}
-						height={product.featuredImage.height}
-						class="h-full w-full object-cover"
-					/>
+					<ImageZoom src={product.featuredImage.url} alt={product.featuredImage.altText || product.title} />
 				{/if}
 			</div>
 
