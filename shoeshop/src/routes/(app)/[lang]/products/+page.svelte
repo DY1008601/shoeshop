@@ -1,15 +1,30 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
+	import FilterSidebar from '$lib/components/product/FilterSidebar.svelte';
+	import type { Filters } from '$lib/components/product/FilterSidebar.svelte';
 	import { products } from '$lib/data/products';
 
 	let lang = $derived($page.params.lang || 'en');
 
 	let sortBy = $state('newest');
 	let searchQuery = $state('');
+	let activeFilters = $state<Filters>({ brands: [], minPrice: '', maxPrice: '' });
+	let mobileFilterOpen = $state(false);
 
 	let sorted = $derived.by(() => {
 		let result = [...products];
+
+		if (activeFilters.brands.length > 0) {
+			result = result.filter((p) => activeFilters.brands.includes(p.title.split(' ')[0]));
+		}
+		if (activeFilters.minPrice) {
+			result = result.filter((p) => parseFloat(p.priceRange.minVariantPrice.amount) >= parseFloat(activeFilters.minPrice));
+		}
+		if (activeFilters.maxPrice) {
+			result = result.filter((p) => parseFloat(p.priceRange.minVariantPrice.amount) <= parseFloat(activeFilters.maxPrice));
+		}
+
 		if (searchQuery) {
 			const q = searchQuery.toLowerCase();
 			result = result.filter((p) => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
@@ -19,7 +34,7 @@
 				result.sort((a, b) => parseFloat(a.priceRange.minVariantPrice.amount) - parseFloat(b.priceRange.minVariantPrice.amount));
 				break;
 			case 'price-high':
-				result.sort((a, b) => parseFloat(b.priceRange.minVariantPrice.amount) - parseFloat(a.priceRange.minVariantPrice.amount));
+				result.sort((a, b) => parseFloat(b.priceRange.maxVariantPrice.amount) - parseFloat(a.priceRange.maxVariantPrice.amount));
 				break;
 		}
 		return result;
@@ -59,18 +74,39 @@
 				<option value="price-low">Price: Low to High</option>
 				<option value="price-high">Price: High to Low</option>
 			</select>
+
+			<button
+				onclick={() => (mobileFilterOpen = !mobileFilterOpen)}
+				class="rounded-lg border border-gray-300 px-4 py-2 text-sm lg:hidden"
+			>
+				Filters
+			</button>
 		</div>
 	</div>
 
-	{#if sorted.length === 0}
-		<div class="py-16 text-center">
-			<p class="text-gray-500">No sneakers found. Try a different search term.</p>
+	<div class="flex gap-8">
+		<div class="hidden w-48 flex-shrink-0 lg:block">
+			<FilterSidebar onchange={(f) => (activeFilters = f)} />
 		</div>
-	{:else}
-		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-			{#each sorted as product (product.id)}
-				<ProductCard {product} />
-			{/each}
+
+		<div class="flex-1">
+			{#if mobileFilterOpen}
+				<div class="mb-6 rounded-xl border border-gray-200 p-4 lg:hidden">
+					<FilterSidebar onchange={(f) => (activeFilters = f)} />
+				</div>
+			{/if}
+
+			{#if sorted.length === 0}
+				<div class="py-16 text-center">
+					<p class="text-gray-500">No sneakers found. Try different filters or search terms.</p>
+				</div>
+			{:else}
+				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+					{#each sorted as product (product.id)}
+						<ProductCard {product} />
+					{/each}
+				</div>
+			{/if}
 		</div>
-	{/if}
+	</div>
 </div>

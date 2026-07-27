@@ -3,6 +3,7 @@
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
 	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 	import HeroSlider from '$lib/components/home/HeroSlider.svelte';
+	import Testimonials from '$lib/components/home/Testimonials.svelte';
 	import RecentlyViewed from '$lib/components/product/RecentlyViewed.svelte';
 	import { products } from '$lib/data/products';
 
@@ -65,6 +66,8 @@
 		{/each}
 	</div>
 </section>
+
+<Testimonials />
 
 <section class="bg-gray-50 py-16">
 	<div class="mx-auto max-w-7xl px-4 text-center">
