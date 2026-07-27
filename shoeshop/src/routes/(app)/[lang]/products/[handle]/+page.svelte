@@ -2,7 +2,12 @@
 	import { page } from '$app/stores';
 	import { products } from '$lib/data/products';
 	import { formatPrice } from '$lib/utils/format';
-	import type { ProductVariant } from '$lib/shopify/types';
+	import { cart } from '$lib/stores/cart';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		cart.load();
+	});
 
 	let lang = $derived($page.params.lang || 'en');
 
@@ -10,6 +15,7 @@
 
 	let selectedSize = $state('');
 	let selectedColor = $state('');
+	let addedToCart = $state(false);
 
 	let availableSizes = $derived(
 		product
@@ -37,9 +43,10 @@
 	);
 
 	function handleAddToCart() {
-		if (!selectedVariant || !selectedVariant.availableForSale) return;
-		// TODO: Connect to Shopify cart API
-		alert(`Added to cart: ${product?.title} - ${selectedVariant.title}`);
+		if (!selectedVariant || !selectedVariant.availableForSale || !product) return;
+		cart.addItem(selectedVariant.id, 1, product, selectedVariant);
+		addedToCart = true;
+		setTimeout(() => { addedToCart = false; }, 2000);
 	}
 </script>
 
@@ -167,10 +174,16 @@
 
 				<button
 					onclick={handleAddToCart}
-					disabled={!selectedVariant?.availableForSale}
-					class="mt-8 w-full rounded-lg bg-gray-900 py-3 text-sm font-semibold text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-300"
+					disabled={!selectedVariant?.availableForSale || addedToCart}
+					class="mt-8 w-full rounded-lg py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed"
+					class:bg-gray-900={!addedToCart}
+					class:hover:bg-gray-800={!addedToCart}
+					class:bg-green-600={addedToCart}
+					class:bg-gray-300={!selectedVariant?.availableForSale && !addedToCart}
 				>
-					{#if !selectedVariant}
+					{#if addedToCart}
+						Added! &mdash; View Cart
+					{:else if !selectedVariant}
 						Select size
 					{:else if !selectedVariant.availableForSale}
 						Sold Out

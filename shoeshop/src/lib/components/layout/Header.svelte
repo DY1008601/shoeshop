@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { cartCount } from '$lib/stores/cart';
+	import { cart, cartCount } from '$lib/stores/cart';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		cart.load();
+	});
 
 	let mobileMenuOpen = $state(false);
 	let lang = $derived($page.params.lang || 'en');
