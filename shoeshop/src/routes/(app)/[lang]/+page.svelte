@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import ProductCard from '$lib/components/product/ProductCard.svelte';
+	import { products } from '$lib/data/products';
 
 	let lang = $derived($page.params.lang || 'en');
+	let featured = $derived(products.slice(0, 4));
 </script>
 
 <svelte:head>
@@ -66,6 +69,20 @@
 			<h3 class="mb-2 text-lg font-semibold text-gray-900">Easy Returns</h3>
 			<p class="text-sm text-gray-600">30-day hassle-free returns. If it doesn't fit, send it back with no questions asked.</p>
 		</div>
+	</div>
+</section>
+
+<section class="mx-auto max-w-7xl px-4 py-16">
+	<div class="mb-8 flex items-center justify-between">
+		<h2 class="text-2xl font-bold text-gray-900">Featured Sneakers</h2>
+		<a href={`/${lang}/products`} class="text-sm font-medium text-gray-900 underline">
+			View All
+		</a>
+	</div>
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+		{#each featured as product (product.id)}
+			<ProductCard {product} />
+		{/each}
 	</div>
 </section>
 
