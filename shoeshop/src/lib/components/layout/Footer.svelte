@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 
 	let lang = $derived($page.params.lang || 'en');
 
@@ -35,6 +36,9 @@
 				<p class="mt-2 text-sm text-gray-600">
 					Premium sneakers for every step. Quality you can trust since 2024.
 				</p>
+				<div class="mt-4">
+					<NewsletterForm />
+				</div>
 			</div>
 
 			<div>

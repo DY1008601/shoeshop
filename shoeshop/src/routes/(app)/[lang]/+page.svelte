@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import ProductCard from '$lib/components/product/ProductCard.svelte';
+	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 	import { products } from '$lib/data/products';
 
 	let lang = $derived($page.params.lang || 'en');
@@ -90,18 +91,8 @@
 	<div class="mx-auto max-w-7xl px-4 text-center">
 		<h2 class="mb-4 text-2xl font-bold text-gray-900">Join Our Newsletter</h2>
 		<p class="mb-6 text-gray-600">Get the latest sneaker drops and exclusive offers straight to your inbox.</p>
-		<form class="mx-auto flex max-w-md gap-2" onsubmit={(e) => e.preventDefault()}>
-			<input
-				type="email"
-				placeholder="your@email.com"
-				class="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-gray-500 focus:outline-none"
-			/>
-			<button
-				type="submit"
-				class="rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
-			>
-				Subscribe
-			</button>
-		</form>
+		<div class="flex justify-center">
+			<NewsletterForm />
+		</div>
 	</div>
 </section>

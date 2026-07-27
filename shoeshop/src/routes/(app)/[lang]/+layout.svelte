@@ -1,4 +1,6 @@
 <script lang="ts">
+	import GDPRBanner from '$lib/components/GDPRBanner.svelte';
+
 	let { children, data } = $props();
 </script>
 
@@ -8,3 +10,5 @@
 </svelte:head>
 
 {@render children()}
+
+<GDPRBanner />
