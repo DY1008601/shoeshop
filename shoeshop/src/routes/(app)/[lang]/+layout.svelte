@@ -1,6 +1,7 @@
 <script lang="ts">
 	import GDPRBanner from '$lib/components/GDPRBanner.svelte';
 	import BackToTop from '$lib/components/ui/BackToTop.svelte';
+	import SkipLink from '$lib/components/ui/SkipLink.svelte';
 
 	let { children, data } = $props();
 </script>
@@ -12,7 +13,10 @@
 	<meta name="theme-color" content="#111827" />
 </svelte:head>
 
-{@render children()}
+<SkipLink />
+<div id="main-content">
+	{@render children()}
+</div>
 
 <GDPRBanner />
 <BackToTop />
