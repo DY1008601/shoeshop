@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { getPost, categoryLabels } from '$lib/data/blog';
+	import ShareButtons from '$lib/components/blog/ShareButtons.svelte';
+	import RelatedPosts from '$lib/components/blog/RelatedPosts.svelte';
 
 	let lang = $derived($page.params.lang || 'en');
 	let slug = $derived($page.params.slug);
 	let post = $derived(getPost(slug, lang));
+	let siteUrl = $derived(typeof window !== 'undefined' ? window.location.origin : '');
 </script>
 
 <svelte:head>
@@ -65,5 +68,11 @@
 		<div class="prose prose-gray max-w-none">
 			{@html post.html}
 		</div>
+
+		<div class="mt-12 border-t border-gray-200 pt-8">
+			<ShareButtons title={post.title} url={siteUrl + '/' + lang + '/blog/' + post.slug} />
+		</div>
+
+		<RelatedPosts currentSlug={post.slug} />
 	</article>
 {/if}
