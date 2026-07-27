@@ -2,4 +2,9 @@
 	let { children, data } = $props();
 </script>
 
+<svelte:head>
+	<link rel="sitemap" type="application/xml" href="/api/sitemap.xml" />
+	<link rel="alternate" type="application/rss+xml" title="ShoeShop Blog" href="/api/feed.xml" />
+</svelte:head>
+
 {@render children()}
