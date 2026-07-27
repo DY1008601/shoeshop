@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	let lang = $derived($page.params.lang || 'en');
+
+	const titles: Record<string, string> = {
+		fr: 'FAQ',
+		de: 'Haufige Fragen',
+		it: 'Domande Frequenti',
+		es: 'Preguntas Frecuentes',
+		en: 'Frequently Asked Questions'
+	};
 </script>
 
 <svelte:head>
@@ -15,7 +23,7 @@
 				{ "@type": "Question", "name": "What is your return policy?", "acceptedAnswer": { "@type": "Answer", "text": "We offer a 30-day hassle-free return policy. Items must be unworn and in original packaging to qualify for a full refund." }},
 				{ "@type": "Question", "name": "Are your sneakers authentic?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every pair we sell comes directly from authorized retailers. We never deal in counterfeits or unauthorized goods." }},
 				{ "@type": "Question", "name": "Do you ship internationally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we ship to over 50 countries worldwide. Customs fees may apply depending on your country." }},
-				{ "@type": "Question", "name": "How can I track my order?", "acceptedAnswer": { "@type": "Answer", "text": "Once your order ships, you will receive a confirmation email with tracking information. You can track your package through your account." }},
+				{ "@type": "Question", "name": "How can I track my order?", "acceptedAnswer": { "@type": "Answer", "text": "Once your order ships, you will receive a confirmation email with tracking information." }},
 				{ "@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "We accept PayPal, Visa, Mastercard, American Express, and Apple Pay." }}
 			]
 		})}
@@ -23,7 +31,7 @@
 </svelte:head>
 
 <div class="mx-auto max-w-3xl px-4 py-16">
-	<h1 class="mb-8 text-3xl font-bold text-gray-900">Frequently Asked Questions</h1>
+	<h1 class="mb-8 text-3xl font-bold text-gray-900">{titles[lang] || titles.en}</h1>
 
 	<div class="space-y-6">
 		<div class="rounded-xl border border-gray-200 p-6">
