@@ -13,5 +13,13 @@
 	"priceHighToLow": "Prezzo: decrescente",
 	"newest": "Piu recenti",
 	"bestSelling": "Piu venduti",
-	"noProducts": "Nessun prodotto trovato."
+	"noProducts": "Nessun prodotto trovato.",
+	"sizeGuide": "Guida alle taglie",
+	"sizeGuideTitle": "Trova la tua misura perfetta",
+	"sizeGuideDesc": "Usa la tabella per convertire tra taglie US, UK, EU e CM.",
+	"usSize": "US",
+	"ukSize": "UK",
+	"euSize": "EU",
+	"cmSize": "CM",
+	"sizeTip": "Se sei tra due misure, consigliamo di prendere mezza taglia in piu per le scarpe da corsa."
 }

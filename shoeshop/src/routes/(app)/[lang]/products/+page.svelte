@@ -4,8 +4,11 @@
 	import FilterSidebar from '$lib/components/product/FilterSidebar.svelte';
 	import SkeletonCard from '$lib/components/SkeletonCard.svelte';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
+	import QuickViewModal from '$lib/components/product/QuickViewModal.svelte';
 	import type { Filters } from '$lib/components/product/FilterSidebar.svelte';
 	import { products } from '$lib/data/products';
+	import type { Product } from '$lib/shopify/types';
 	import { onMount } from 'svelte';
 
 	let lang = $derived($page.params.lang || 'en');
@@ -19,6 +22,10 @@
 	let searchQuery = $state('');
 	let activeFilters = $state<Filters>({ brands: [], minPrice: '', maxPrice: '' });
 	let mobileFilterOpen = $state(false);
+	let quickViewProduct = $state<Product | null>(null);
+
+	let pageNum = $state(1);
+	const pageSize = 6;
 
 	let sorted = $derived.by(() => {
 		let result = [...products];
@@ -47,6 +54,10 @@
 		}
 		return result;
 	});
+
+	let totalPages = $derived(Math.max(1, Math.ceil(sorted.length / pageSize)));
+
+	let paged = $derived(sorted.slice((pageNum - 1) * pageSize, pageNum * pageSize));
 </script>
 
 <svelte:head>
@@ -106,23 +117,41 @@
 				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
 					<SkeletonCard count={6} />
 				</div>
-			{:else if mobileFilterOpen}
-				<div class="mb-6 rounded-xl border border-gray-200 p-4 lg:hidden">
-					<FilterSidebar onchange={(f) => (activeFilters = f)} />
-				</div>
-			{/if}
-
-			{#if sorted.length === 0}
-				<div class="py-16 text-center">
-					<p class="text-gray-500">No sneakers found. Try different filters or search terms.</p>
-				</div>
 			{:else}
-				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-					{#each sorted as product (product.id)}
-						<ProductCard {product} />
-					{/each}
-				</div>
+				{#if mobileFilterOpen}
+					<div class="mb-6 rounded-xl border border-gray-200 p-4 lg:hidden">
+						<FilterSidebar onchange={(f) => (activeFilters = f)} />
+					</div>
+				{/if}
+
+				{#if sorted.length === 0}
+					<div class="py-16 text-center">
+						<p class="text-gray-500">No sneakers found. Try different filters or search terms.</p>
+					</div>
+				{:else}
+					<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+						{#each paged as product (product.id)}
+							<div class="group relative">
+								<ProductCard {product} />
+								<div class="absolute left-0 top-0 h-full w-full opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto">
+									<button
+										onclick={(e) => { e.preventDefault(); quickViewProduct = product; }}
+										class="absolute bottom-0 left-1/2 -translate-x-1/2 mb-16 rounded-lg bg-white/90 px-4 py-2 text-sm font-medium text-gray-900 shadow-lg backdrop-blur-sm hover:bg-white transition pointer-events-auto"
+									>
+										Quick View
+									</button>
+								</div>
+							</div>
+						{/each}
+					</div>
+
+					<Pagination currentPage={pageNum} {totalPages} baseUrl={`/${lang}/products`} />
+				{/if}
 			{/if}
 		</div>
 	</div>
 </div>
+
+{#if quickViewProduct}
+	<QuickViewModal product={quickViewProduct} open={true} onclose={() => (quickViewProduct = null)} />
+{/if}

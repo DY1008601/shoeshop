@@ -13,5 +13,13 @@
 	"priceHighToLow": "Prix: decroissant",
 	"newest": "Nouveautes",
 	"bestSelling": "Meilleures ventes",
-	"noProducts": "Aucun produit trouve."
+	"noProducts": "Aucun produit trouve.",
+	"sizeGuide": "Guide des tailles",
+	"sizeGuideTitle": "Trouvez votre taille parfaite",
+	"sizeGuideDesc": "Utilisez le tableau pour convertir entre les tailles US, UK, EU et CM.",
+	"usSize": "US",
+	"ukSize": "UK",
+	"euSize": "EU",
+	"cmSize": "CM",
+	"sizeTip": "Si vous etes entre deux tailles, nous recommandons de prendre une demi-taille au-dessus pour les chaussures de course."
 }

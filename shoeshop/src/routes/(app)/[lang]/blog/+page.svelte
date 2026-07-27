@@ -3,6 +3,7 @@
 	import { getAllPosts, categoryLabels } from '$lib/data/blog';
 	import SkeletonBlogCard from '$lib/components/SkeletonBlogCard.svelte';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 	import { onMount } from 'svelte';
 
 	let lang = $derived($page.params.lang || 'en');
@@ -12,11 +13,17 @@
 		loading = false;
 	});
 
-	let posts = $derived(getAllPosts(lang));
+	let allPosts = $derived(getAllPosts(lang));
+
+	let pageNum = $state(1);
+	const pageSize = 4;
+
+	let totalPages = $derived(Math.max(1, Math.ceil(allPosts.length / pageSize)));
+	let posts = $derived(allPosts.slice((pageNum - 1) * pageSize, pageNum * pageSize));
 </script>
 
 <svelte:head>
-	<title>ShoeShop Blog - Sneaker Reviews, Style Guides & More</title>
+	<title>ShoeShop Blog - Sneaker Reviews, Style Guides &amp; More</title>
 	<meta name="description" content="Expert sneaker reviews, style guides, size guides, and brand stories. Your go-to resource for everything sneakers." />
 </svelte:head>
 
@@ -34,7 +41,7 @@
 		<div class="grid gap-8 md:grid-cols-2">
 			<SkeletonBlogCard count={4} />
 		</div>
-	{:else if posts.length === 0}
+	{:else if allPosts.length === 0}
 		<div class="py-16 text-center">
 			<p class="text-gray-500">No posts found in this language yet.</p>
 		</div>
@@ -62,5 +69,7 @@
 				</article>
 			{/each}
 		</div>
+
+		<Pagination currentPage={pageNum} {totalPages} baseUrl={`/${lang}/blog`} />
 	{/if}
 </div>

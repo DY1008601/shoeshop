@@ -13,5 +13,13 @@
 	"priceHighToLow": "Price: High to Low",
 	"newest": "Newest",
 	"bestSelling": "Best Selling",
-	"noProducts": "No products found."
+	"noProducts": "No products found.",
+	"sizeGuide": "Size Guide",
+	"sizeGuideTitle": "Find Your Perfect Fit",
+	"sizeGuideDesc": "Use the chart below to convert between US, UK, EU, and CM sizes.",
+	"usSize": "US",
+	"ukSize": "UK",
+	"euSize": "EU",
+	"cmSize": "CM",
+	"sizeTip": "If you are between sizes, we recommend going up half a size for running shoes."
 }

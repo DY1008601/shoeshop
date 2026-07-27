@@ -13,5 +13,13 @@
 	"priceHighToLow": "Preis: absteigend",
 	"newest": "Neueste",
 	"bestSelling": "Bestseller",
-	"noProducts": "Keine Produkte gefunden."
+	"noProducts": "Keine Produkte gefunden.",
+	"sizeGuide": "Grossentabelle",
+	"sizeGuideTitle": "Finden Sie Ihre perfekte Grosse",
+	"sizeGuideDesc": "Nutzen Sie die Tabelle zur Umrechnung zwischen US-, UK-, EU- und CM-Grossen.",
+	"usSize": "US",
+	"ukSize": "UK",
+	"euSize": "EU",
+	"cmSize": "CM",
+	"sizeTip": "Wenn Sie zwischen zwei Grossen liegen, empfehlen wir bei Laufschuhen eine halbe Nummer grosser."
 }

@@ -13,5 +13,13 @@
 	"priceHighToLow": "Precio: mayor a menor",
 	"newest": "Novedades",
 	"bestSelling": "Mas vendidos",
-	"noProducts": "No se encontraron productos."
+	"noProducts": "No se encontraron productos.",
+	"sizeGuide": "Guia de tallas",
+	"sizeGuideTitle": "Encuentra tu talla perfecta",
+	"sizeGuideDesc": "Usa la tabla para convertir entre tallas US, UK, EU y CM.",
+	"usSize": "US",
+	"ukSize": "UK",
+	"euSize": "EU",
+	"cmSize": "CM",
+	"sizeTip": "Si estas entre dos tallas, recomendamos elegir media talla mas para zapatillas de running."
 }

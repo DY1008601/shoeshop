@@ -10,6 +10,7 @@
 	import WishlistButton from '$lib/components/WishlistButton.svelte';
 	import SkeletonProductDetail from '$lib/components/SkeletonProductDetail.svelte';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+	import SizeGuide from '$lib/components/product/SizeGuide.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -203,6 +204,8 @@
 						{/each}
 					</div>
 				</div>
+
+				<SizeGuide />
 
 				<button
 					onclick={handleAddToCart}
