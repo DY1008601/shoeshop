@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
+	import MobileNav from '$lib/components/layout/MobileNav.svelte';
 	import GDPRBanner from '$lib/components/GDPRBanner.svelte';
 	import BackToTop from '$lib/components/ui/BackToTop.svelte';
 	import SkipLink from '$lib/components/ui/SkipLink.svelte';
@@ -34,6 +35,8 @@
 		</div>
 	{/key}
 </div>
+
+<MobileNav />
 
 <GDPRBanner />
 <BackToTop />
