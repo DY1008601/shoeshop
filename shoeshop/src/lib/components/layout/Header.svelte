@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { cart, cartCount } from '$lib/stores/cart';
+	import SearchBar from '$lib/components/SearchBar.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -37,6 +38,10 @@
 				</a>
 			{/each}
 		</nav>
+
+		<div class="hidden md:block">
+			<SearchBar />
+		</div>
 
 		<div class="flex items-center gap-4">
 			<div class="hidden items-center gap-2 md:flex">

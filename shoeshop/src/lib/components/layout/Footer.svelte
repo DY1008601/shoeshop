@@ -17,14 +17,19 @@
 		company: [
 			{ label: 'About', href: `/${lang}/about` },
 			{ label: 'Blog', href: `/${lang}/blog` },
-			{ label: 'Contact', href: `/${lang}/contact` }
+			{ label: 'Contact', href: `/${lang}/contact` },
+			{ label: 'FAQ', href: `/${lang}/faq` }
+		],
+		legal: [
+			{ label: 'Privacy Policy', href: `/${lang}/privacy` },
+			{ label: 'Terms of Service', href: `/${lang}/terms` }
 		]
 	});
 </script>
 
 <footer class="border-t border-gray-200 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-4 py-12">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-5">
 			<div>
 				<h3 class="text-lg font-bold text-gray-900">ShoeShop</h3>
 				<p class="mt-2 text-sm text-gray-600">
@@ -58,6 +63,17 @@
 				<h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Company</h4>
 				<ul class="mt-3 space-y-2">
 					{#each links.company as link}
+						<li>
+							<a href={link.href} class="text-sm text-gray-600 hover:text-gray-900">{link.label}</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+
+			<div>
+				<h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Legal</h4>
+				<ul class="mt-3 space-y-2">
+					{#each links.legal as link}
 						<li>
 							<a href={link.href} class="text-sm text-gray-600 hover:text-gray-900">{link.label}</a>
 						</li>

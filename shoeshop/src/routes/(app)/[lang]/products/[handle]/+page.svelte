@@ -3,6 +3,8 @@
 	import { products } from '$lib/data/products';
 	import { formatPrice } from '$lib/utils/format';
 	import { cart } from '$lib/stores/cart';
+	import RelatedProducts from '$lib/components/product/RelatedProducts.svelte';
+	import Reviews from '$lib/components/product/Reviews.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -16,6 +18,12 @@
 	let selectedSize = $state('');
 	let selectedColor = $state('');
 	let addedToCart = $state(false);
+
+	const sampleReviews = [
+		{ name: 'Michael R.', rating: 5, date: '2024-03-15', title: 'Best running shoes I have owned', body: 'Incredibly comfortable right out of the box. I have put about 50 miles on them and they still feel great. The cushioning is perfect for my daily runs.', verified: true },
+		{ name: 'Sarah K.', rating: 4, date: '2024-03-10', title: 'Great shoes, runs slightly small', body: 'The quality is excellent and they look even better in person. I would recommend going half a size up from your normal size. Otherwise perfect.', verified: true },
+		{ name: 'David L.', rating: 5, date: '2024-02-28', title: 'Game changer for my workouts', body: 'Switched from another brand and the difference is night and day. My feet feel supported during HIIT sessions and the grip is outstanding.', verified: true }
+	];
 
 	let availableSizes = $derived(
 		product
@@ -57,19 +65,24 @@
 		{JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Product",
-			name: product?.title,
-			description: product?.description,
-			image: product?.featuredImage?.url,
-			offers: product ? {
+			"name": product?.title,
+			"description": product?.description,
+			"image": product?.featuredImage?.url,
+			"offers": product ? {
 				"@type": "Offer",
-				price: product.priceRange.minVariantPrice.amount,
-				priceCurrency: product.priceRange.minVariantPrice.currencyCode,
-				availability: product.variants.edges.some(v => v.node.availableForSale) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+				"price": product.priceRange.minVariantPrice.amount,
+				"priceCurrency": product.priceRange.minVariantPrice.currencyCode,
+				"availability": product.variants.edges.some(v => v.node.availableForSale) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
 			} : undefined,
-			brand: product ? {
+			"brand": product ? {
 				"@type": "Brand",
-				name: product.title.split(' ')[0]
-			} : undefined
+				"name": product.title.split(' ')[0]
+			} : undefined,
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.7",
+				"reviewCount": sampleReviews.length.toString()
+			}
 		})}
 	</script>
 </svelte:head>
@@ -200,5 +213,9 @@
 				</div>
 			</div>
 		</div>
+
+		<Reviews reviews={sampleReviews} />
+
+		<RelatedProducts currentHandle={product.handle} category={product.collections.edges[0]?.node.handle} />
 	</div>
 {/if}
