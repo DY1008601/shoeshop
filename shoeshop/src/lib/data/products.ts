@@ -1,5 +1,44 @@
 import type { Product } from '$lib/shopify/types';
 
+function variant(id: string, color: string, size: string, price: string, compareAt?: string) {
+	return {
+		node: {
+			id,
+			title: `${color} / ${size}`,
+			availableForSale: true,
+			selectedOptions: [
+				{ name: 'Color', value: color },
+				{ name: 'Size', value: size }
+			],
+			price: { amount: price, currencyCode: 'USD' },
+			compareAtPrice: compareAt ? { amount: compareAt, currencyCode: 'USD' } : null,
+			image: null
+		}
+	};
+}
+
+const sizes = ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'];
+
+function variants(colors: string[], basePrice: string, saleColor?: string, salePrice?: string) {
+	const edges: ReturnType<typeof variant>[] = [];
+	for (const c of colors) {
+		for (const s of sizes) {
+			const price = (saleColor && c === saleColor && salePrice) ? salePrice : basePrice;
+			const compareAt = (saleColor && c === saleColor) ? basePrice : undefined;
+			edges.push(variant(`v-${c.replace(/\s+/g, '-')}-${s.replace(/\s+/g, '-')}`, c, s, price, compareAt));
+		}
+	}
+	return { edges };
+}
+
+function priceRange(min: string, max?: string) {
+	return { minVariantPrice: { amount: min, currencyCode: 'USD' }, maxVariantPrice: { amount: max || min, currencyCode: 'USD' } };
+}
+
+function collection(handle: string, title: string) {
+	return { edges: [{ node: { handle, title } }] };
+}
+
 export const products: Product[] = [
 	{
 		id: 'gid://shopify/Product/1',
@@ -10,19 +49,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/nike-air-max-pulse.svg', altText: 'Nike Air Max Pulse', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Black', 'White', 'Grey'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v1-black-9', title: 'Black / US 9', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Black' }, { name: 'Size', value: 'US 9' }], price: { amount: '150.00', currencyCode: 'USD' }, compareAtPrice: { amount: '180.00', currencyCode: 'USD' }, image: null } },
-				{ node: { id: 'v1-white-10', title: 'White / US 10', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'White' }, { name: 'Size', value: 'US 10' }], price: { amount: '150.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } },
-				{ node: { id: 'v1-black-10', title: 'Black / US 10', availableForSale: false, selectedOptions: [{ name: 'Color', value: 'Black' }, { name: 'Size', value: 'US 10' }], price: { amount: '150.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'running', title: 'Running' } }] },
+		variants: variants(['Black', 'White', 'Grey'], '150.00', 'Black', '120.00'),
+		collections: collection('running', 'Running'),
 		seo: { title: 'Nike Air Max Pulse - Premium Running Shoes', description: 'Experience ultimate comfort with the Nike Air Max Pulse. Breathable mesh upper and iconic Air Max cushioning.' },
-		priceRange: { minVariantPrice: { amount: '150.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '150.00', currencyCode: 'USD' } }
+		priceRange: priceRange('120.00', '150.00')
 	},
 	{
 		id: 'gid://shopify/Product/2',
@@ -33,18 +66,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/adidas-ultraboost.svg', altText: 'Adidas Ultraboost Light', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Core Black', 'Cloud White', 'Grey Two'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v2-black-9', title: 'Core Black / US 9', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Core Black' }, { name: 'Size', value: 'US 9' }], price: { amount: '190.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } },
-				{ node: { id: 'v2-white-10', title: 'Cloud White / US 10', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Cloud White' }, { name: 'Size', value: 'US 10' }], price: { amount: '180.00', currencyCode: 'USD' }, compareAtPrice: { amount: '190.00', currencyCode: 'USD' }, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'running', title: 'Running' } }] },
+		variants: variants(['Core Black', 'Cloud White', 'Grey Two'], '190.00', 'Cloud White', '160.00'),
+		collections: collection('running', 'Running'),
 		seo: { title: 'Adidas Ultraboost Light - Lightweight Running Shoes', description: 'The lightest Ultraboost ever. Light BOOST technology for responsive cushioning.' },
-		priceRange: { minVariantPrice: { amount: '180.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '190.00', currencyCode: 'USD' } }
+		priceRange: priceRange('160.00', '190.00')
 	},
 	{
 		id: 'gid://shopify/Product/3',
@@ -55,18 +83,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/new-balance-990v6.svg', altText: 'New Balance 990v6', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 8', 'US 9', 'US 10', 'US 11', 'US 12'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Grey', 'Navy', 'Black'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v3-grey-10', title: 'Grey / US 10', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Grey' }, { name: 'Size', value: 'US 10' }], price: { amount: '200.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } },
-				{ node: { id: 'v3-navy-9', title: 'Navy / US 9', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Navy' }, { name: 'Size', value: 'US 9' }], price: { amount: '200.00', currencyCode: 'USD' }, compareAtPrice: { amount: '210.00', currencyCode: 'USD' }, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'lifestyle', title: 'Lifestyle' } }] },
+		variants: variants(['Grey', 'Navy', 'Black'], '200.00'),
+		collections: collection('lifestyle', 'Lifestyle'),
 		seo: { title: 'New Balance 990v6 - Premium Made in USA Sneakers', description: 'The legendary 990v6, made in the USA. FuelCell midsole with ENCAP support for premium comfort.' },
-		priceRange: { minVariantPrice: { amount: '200.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '200.00', currencyCode: 'USD' } }
+		priceRange: priceRange('200.00')
 	},
 	{
 		id: 'gid://shopify/Product/4',
@@ -77,17 +100,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/asics-gel-kayano.svg', altText: 'ASICS Gel-Kayano 30', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Black/Pure Silver', 'White/Midnight', 'Lite Show'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v4-black-9', title: 'Black/Pure Silver / US 9', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Black/Pure Silver' }, { name: 'Size', value: 'US 9' }], price: { amount: '160.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'running', title: 'Running' } }] },
+		variants: variants(['Black/Pure Silver', 'White/Midnight', 'Lite Show'], '160.00', 'Lite Show', '135.00'),
+		collections: collection('running', 'Running'),
 		seo: { title: 'ASICS Gel-Kayano 30 - Premium Stability Running Shoes', description: 'Revolutionary 4D GUIDANCE SYSTEM with PureGEL technology for adaptive stability.' },
-		priceRange: { minVariantPrice: { amount: '160.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '160.00', currencyCode: 'USD' } }
+		priceRange: priceRange('135.00', '160.00')
 	},
 	{
 		id: 'gid://shopify/Product/5',
@@ -98,17 +117,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/on-cloudmonster.svg', altText: 'On Cloudmonster', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 8', 'US 9', 'US 10', 'US 11'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Black/White', 'Alloy/Sand', 'Flame/Black'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v5-black-10', title: 'Black/White / US 10', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Black/White' }, { name: 'Size', value: 'US 10' }], price: { amount: '170.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'running', title: 'Running' } }] },
+		variants: variants(['Black/White', 'Alloy/Sand', 'Flame/Black'], '170.00'),
+		collections: collection('running', 'Running'),
 		seo: { title: 'On Cloudmonster - Maximum Cushioned Running Shoes', description: 'On\'s largest CloudTec elements for maximum cushioning and explosive energy return.' },
-		priceRange: { minVariantPrice: { amount: '170.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '170.00', currencyCode: 'USD' } }
+		priceRange: priceRange('170.00')
 	},
 	{
 		id: 'gid://shopify/Product/6',
@@ -119,17 +134,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/puma-velocity-nitro.svg', altText: 'Puma Velocity NITRO 3', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Puma Black', 'Sun Stream', 'Parisian Night'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v6-black-10', title: 'Puma Black / US 10', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Puma Black' }, { name: 'Size', value: 'US 10' }], price: { amount: '130.00', currencyCode: 'USD' }, compareAtPrice: { amount: '140.00', currencyCode: 'USD' }, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'running', title: 'Running' } }] },
+		variants: variants(['Puma Black', 'Sun Stream', 'Parisian Night'], '130.00', 'Puma Black', '110.00'),
+		collections: collection('running', 'Running'),
 		seo: { title: 'Puma Velocity NITRO 3 - Versatile Running Shoes', description: 'NITRO foam technology with PWRTAPE reinforcement for cushioning and support.' },
-		priceRange: { minVariantPrice: { amount: '130.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '130.00', currencyCode: 'USD' } }
+		priceRange: priceRange('110.00', '130.00')
 	},
 	{
 		id: 'gid://shopify/Product/7',
@@ -140,17 +151,13 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/hoka-clifton-9.svg', altText: 'HOKA Clifton 9', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Black/White', 'Solar Flare', 'Coastal Sky'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v7-black-9', title: 'Black/White / US 9', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Black/White' }, { name: 'Size', value: 'US 9' }], price: { amount: '145.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'running', title: 'Running' } }] },
+		variants: variants(['Black/White', 'Solar Flare', 'Coastal Sky'], '145.00', 'Solar Flare', '125.00'),
+		collections: collection('running', 'Running'),
 		seo: { title: 'HOKA Clifton 9 - Lightweight Cushioned Running Shoes', description: 'HOKA\'s signature plush cushioning in a lighter, more responsive package.' },
-		priceRange: { minVariantPrice: { amount: '145.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '145.00', currencyCode: 'USD' } }
+		priceRange: priceRange('125.00', '145.00')
 	},
 	{
 		id: 'gid://shopify/Product/8',
@@ -161,16 +168,12 @@ export const products: Product[] = [
 		featuredImage: { url: '/images/shoes/saucony-endorphin-speed.svg', altText: 'Saucony Endorphin Speed 4', width: 800, height: 800 },
 		images: { edges: [] },
 		options: [
-			{ name: 'Size', values: ['US 8', 'US 9', 'US 10', 'US 11'] },
+			{ name: 'Size', values: sizes },
 			{ name: 'Color', values: ['Vizipro', 'Shadow/White', 'Electric'] }
 		],
-		variants: {
-			edges: [
-				{ node: { id: 'v8-vizipro-10', title: 'Vizipro / US 10', availableForSale: true, selectedOptions: [{ name: 'Color', value: 'Vizipro' }, { name: 'Size', value: 'US 10' }], price: { amount: '170.00', currencyCode: 'USD' }, compareAtPrice: null, image: null } }
-			]
-		},
-		collections: { edges: [{ node: { handle: 'performance', title: 'Performance' } }] },
+		variants: variants(['Vizipro', 'Shadow/White', 'Electric'], '170.00'),
+		collections: collection('performance', 'Performance'),
 		seo: { title: 'Saucony Endorphin Speed 4 - Performance Running Shoes', description: 'SPEEDROLL technology with nylon plate for race-day speed and everyday comfort.' },
-		priceRange: { minVariantPrice: { amount: '170.00', currencyCode: 'USD' }, maxVariantPrice: { amount: '170.00', currencyCode: 'USD' } }
+		priceRange: priceRange('170.00')
 	}
 ];
