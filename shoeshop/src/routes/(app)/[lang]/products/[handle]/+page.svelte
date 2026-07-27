@@ -6,6 +6,8 @@
 	import RelatedProducts from '$lib/components/product/RelatedProducts.svelte';
 	import Reviews from '$lib/components/product/Reviews.svelte';
 	import ImageZoom from '$lib/components/product/ImageZoom.svelte';
+	import ImageGallery from '$lib/components/product/ImageGallery.svelte';
+	import WishlistButton from '$lib/components/WishlistButton.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -115,8 +117,11 @@
 		</nav>
 
 		<div class="grid gap-8 md:grid-cols-2">
-			<div class="aspect-square overflow-hidden rounded-xl">
-				{#if product.featuredImage}
+			<div class="relative">
+				{#if product.images.edges.length > 0}
+					{@const galleryImages = product.images.edges.map((e) => ({ url: e.node.url, alt: e.node.altText || product.title }))}
+					<ImageGallery images={galleryImages} />
+				{:else if product.featuredImage}
 					<ImageZoom src={product.featuredImage.url} alt={product.featuredImage.altText || product.title} />
 				{/if}
 			</div>
@@ -128,7 +133,10 @@
 					</span>
 				{/if}
 
-				<h1 class="mt-1 text-3xl font-bold text-gray-900">{product.title}</h1>
+				<h1 class="mt-1 flex items-center gap-2 text-3xl font-bold text-gray-900">
+					<span>{product.title}</span>
+					<WishlistButton handle={product.handle} />
+				</h1>
 
 				<div class="mt-3 flex items-baseline gap-2">
 					<span class="text-2xl font-bold text-gray-900">

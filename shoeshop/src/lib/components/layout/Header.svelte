@@ -3,11 +3,12 @@
 	import { cart, cartCount } from '$lib/stores/cart';
 	import SearchBar from '$lib/components/SearchBar.svelte';
 	import CartDrawer from '$lib/components/cart/CartDrawer.svelte';
+	import { wishlist, wishlistCount } from '$lib/stores/wishlist';
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
 
 	onMount(() => {
 		cart.load();
+		wishlist.load();
 	});
 
 	let mobileMenuOpen = $state(false);
@@ -64,6 +65,17 @@
 					{/if}
 				{/each}
 			</div>
+
+			<a href={`/${lang}/wishlist`} class="relative text-gray-700 hover:text-gray-900" aria-label="Wishlist">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+				</svg>
+				{#if $wishlistCount > 0}
+					<span class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-xs text-white">
+						{$wishlistCount}
+					</span>
+				{/if}
+			</a>
 
 			<button onclick={() => (cartOpen = true)} class="relative text-gray-700 hover:text-gray-900" aria-label="Open cart">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

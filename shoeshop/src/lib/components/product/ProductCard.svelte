@@ -2,6 +2,7 @@
 	import { formatPrice } from '$lib/utils/format';
 	import type { Product } from '$lib/shopify/types';
 	import { page } from '$app/stores';
+	import WishlistButton from '$lib/components/WishlistButton.svelte';
 
 	let { product }: { product: Product } = $props();
 	let lang = $derived($page.params.lang || 'en');
@@ -34,6 +35,10 @@
 			<span class="absolute right-3 top-3 rounded-full bg-red-500 px-2 py-1 text-xs font-medium text-white">
 				Sale
 			</span>
+		{:else}
+			<div class="absolute right-2 top-2">
+				<WishlistButton handle={product.handle} size="sm" />
+			</div>
 		{/if}
 	</div>
 
