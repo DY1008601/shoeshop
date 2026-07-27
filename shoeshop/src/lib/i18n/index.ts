@@ -1,4 +1,4 @@
-import { derived, writable } from 'svelte/store';
+import { derived } from 'svelte/store';
 import { page } from '$app/stores';
 
 const supportedLocales = (import.meta.env.PUBLIC_SUPPORTED_LOCALES || 'en').split(',');
@@ -14,30 +14,33 @@ export const locale = derived(page, ($page) => {
 	return getLocaleFromPath($page.url.pathname);
 });
 
-interface Translations {
-	[namespace: string]: Record<string, string>;
+interface NamespaceTranslations {
+	[key: string]: string;
 }
 
-const translationCache: Record<string, Translations> = {};
+interface Translations {
+	[key: string]: NamespaceTranslations;
+}
 
-export async function loadTranslations(locale: string): Promise<Translations> {
-	if (translationCache[locale]) return translationCache[locale];
+const translationModules = import.meta.glob<{ default: NamespaceTranslations }>(
+	'../translations/*/*.json',
+	{ eager: true }
+);
 
-	const namespaces = ['common', 'product', 'checkout', 'blog'];
-	const translations: Translations = {};
+const translationData: Record<string, Translations> = {};
 
-	for (const ns of namespaces) {
-		try {
-			const mod = await import(`../translations/${locale}/${ns}.json`);
-			translations[ns] = mod.default;
-		} catch {
-			const fallback = await import(`../translations/en/${ns}.json`);
-			translations[ns] = fallback.default;
-		}
+for (const [path, mod] of Object.entries(translationModules)) {
+	const match = path.match(/\/translations\/([^/]+)\/([^/]+)\.json$/);
+	if (match) {
+		const [, locale, namespace] = match;
+		const ns = namespace.replace('.json', '');
+		if (!translationData[locale]) translationData[locale] = {};
+		translationData[locale][ns] = mod.default;
 	}
+}
 
-	translationCache[locale] = translations;
-	return translations;
+export function loadTranslations(locale: string): Translations {
+	return translationData[locale] || translationData.en || {};
 }
 
 export function t(translations: Translations, key: string): string {
