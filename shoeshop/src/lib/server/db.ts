@@ -1,5 +1,6 @@
 import initSqlJs, { type Database } from 'sql.js';
 import { building } from '$app/environment';
+import bcrypt from 'bcryptjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -133,7 +134,6 @@ function runMigrations(db: Database) {
 function seedDefaultData(db: Database) {
 	const admin = db.exec('SELECT id FROM admins LIMIT 1');
 	if (!admin.length) {
-		const bcrypt = require('bcryptjs') as typeof import('bcryptjs');
 		const hash = bcrypt.hashSync('admin123', 10);
 		db.run('INSERT INTO admins (username, password_hash) VALUES (?, ?)', ['admin', hash]);
 	}
