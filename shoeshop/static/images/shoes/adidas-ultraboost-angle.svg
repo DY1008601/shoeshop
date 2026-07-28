@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f9fafb"/><stop offset="100%" stop-color="#f3f4f6"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5f5f5"/><stop offset="100%" stop-color="#e8e8e8"/></linearGradient>
+    <linearGradient id="boost" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fafafa"/><stop offset="100%" stop-color="#d1d5db"/></linearGradient>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e1e1e"/><stop offset="100%" stop-color="#4b5563"/></linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="32" fill="url(#sbg)"/>
+  <ellipse cx="380" cy="710" rx="200" ry="18" fill="rgba(0,0,0,0.06)"/>
+  <!-- Bottom sole edge -->
+  <path d="M280 680 L620 640 L640 600 L300 640Z" fill="#d1d5db"/>
+  <path d="M280 640 L620 600 L600 560 L260 600Z" fill="#cbd5e1"/>
+  <!-- Boost midsole bumps -->
+  <path d="M260 580 Q280 565 300 580 Q320 565 340 580 Q360 565 380 580 Q400 565 420 580 Q440 565 460 580 Q480 565 500 580 Q520 565 540 580 Q560 565 580 580 Q600 565 620 580 L640 540 L260 540Z" fill="url(#boost)"/>
+  <!-- Upper body (3/4) -->
+  <path d="M240 200 Q250 145 305 115 Q395 85 495 100 Q575 115 635 155 Q675 190 685 245 Q695 295 695 350 Q695 480 675 530 L260 570 Q240 500 230 440 Q220 340 230 250Z" fill="url(#body)"/>
+  <!-- Toe -->
+  <path d="M635 155 Q675 190 685 245 Q695 295 695 350 Q695 390 690 420 L645 420 Q645 320 625 260Z" fill="#d4d4d4"/>
+  <!-- Mesh -->
+  <path d="M330 200 Q400 155 500 160" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <path d="M320 245 Q400 200 510 205" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <path d="M310 290 Q400 245 520 255" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <path d="M300 335 Q400 290 530 305" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <!-- 3 Stripes (angle) -->
+  <rect x="300" y="280" width="260" height="6" rx="3" fill="url(#stripe)" transform="rotate(-8, 430, 283)"/>
+  <rect x="310" y="300" width="260" height="6" rx="3" fill="url(#stripe)" transform="rotate(-8, 440, 303)"/>
+  <rect x="320" y="320" width="260" height="6" rx="3" fill="url(#stripe)" transform="rotate(-8, 450, 323)"/>
+  <!-- Collar -->
+  <path d="M240 200 Q255 150 290 130 L260 210Z" fill="#d4d4d4"/>
+  <!-- Tongue -->
+  <path d="M350 95 Q375 55 405 50 Q435 48 455 56 L475 88 Q475 135 350 135Z" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/>
+  <!-- Eyelets -->
+  <circle cx="335" cy="175" r="5" fill="#d1d5db"/><circle cx="360" cy="200" r="5" fill="#d1d5db"/>
+  <circle cx="385" cy="225" r="5" fill="#d1d5db"/><circle cx="410" cy="250" r="5" fill="#d1d5db"/>
+  <circle cx="435" cy="275" r="5" fill="#d1d5db"/>
+  <!-- Laces -->
+  <path d="M335 175 L405 165" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M360 200 L420 190" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M385 225 L435 215" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M410 250 L450 240" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M435 275 L465 265" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <text x="460" y="520" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#1e1e1e" text-anchor="middle" letter-spacing="4">ADIDAS</text>
+</svg>

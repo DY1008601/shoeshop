@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="soleBase" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="rubberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="560" rx="200" ry="28" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(100, 100)">
+    <!-- Extra wide outsole shape (HOKA wide platform) -->
+    <path d="M30,460 Q20,450 15,420 L15,150 Q20,120 35,95 Q55,65 95,50 Q135,38 180,32 Q250,22 310,20 Q370,18 430,22 Q475,28 515,42 Q555,60 575,88 Q595,115 600,150 L600,420 Q595,450 585,460 Q565,485 510,495 Q445,505 370,508 Q310,510 250,508 Q175,505 110,495 Q65,488 45,465 Z" fill="url(#soleBase)"/>
+
+    <!-- Durabrasion rubber zones - heel -->
+    <path d="M15,420 Q20,450 30,460 Q45,465 65,488 Q110,495 175,505 Q250,508 310,508 Q370,508 445,505 Q510,495 565,488 Q585,465 585,460 Q595,450 600,420 L600,380 Q550,392 310,392 Q70,392 15,380 Z" fill="url(#rubberGrad)" opacity="0.85"/>
+
+    <!-- Durabrasion rubber zones - forefoot -->
+    <path d="M15,150 Q20,120 35,95 Q55,65 95,50 Q135,38 180,32 Q250,22 310,20 Q370,18 430,22 Q475,28 515,42 Q555,60 575,88 Q595,115 600,150 L600,190 Q550,178 310,178 Q70,178 15,190 Z" fill="url(#rubberGrad)" opacity="0.85"/>
+
+    <!-- Meta-Rocker geometry curve -->
+    <path d="M15,240 Q150,225 310,222 Q470,225 600,240" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.6"/>
+
+    <!-- Meta-Rocker arrow indicator -->
+    <path d="M220,230 L230,210 L240,230" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+    <path d="M380,230 L390,210 L400,230" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Flex grooves -->
+    <g fill="none" stroke="#1e3a5f" stroke-width="1.8" opacity="0.5">
+      <path d="M15,170 Q180,158 310,155 Q440,158 600,170"/>
+      <path d="M15,200 Q180,188 310,185 Q440,188 600,200"/>
+      <path d="M15,265 Q180,253 310,250 Q440,253 600,265"/>
+      <path d="M15,295 Q180,283 310,280 Q440,283 600,295"/>
+      <path d="M15,325 Q180,313 310,310 Q440,313 600,325"/>
+      <path d="M18,355 Q180,343 310,340 Q440,343 598,355"/>
+      <path d="M18,400 Q180,388 310,385 Q440,388 598,400"/>
+      <path d="M18,435 Q180,423 310,420 Q440,423 598,435"/>
+    </g>
+
+    <!-- Deep flex grooves (Meta-Rocker) -->
+    <g fill="none" stroke="#1d4ed8" stroke-width="2.5" opacity="0.5">
+      <path d="M15,240 Q180,230 310,225 Q440,230 600,240" stroke-dasharray="10,14"/>
+    </g>
+
+    <!-- HOKA text -->
+    <text x="310" y="310" font-family="Arial,sans-serif" font-weight="900" font-size="32" fill="#1e3a5f" text-anchor="middle" opacity="0.45">HOKA</text>
+
+    <!-- Clifton labeling -->
+    <text x="310" y="205" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#fff" text-anchor="middle" opacity="0.5">CLIFTON</text>
+    <text x="310" y="442" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#fff" text-anchor="middle" opacity="0.5">DURABRASION</text>
+
+    <!-- Meta-Rocker label -->
+    <text x="310" y="248" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#f59e0b" text-anchor="middle" opacity="0.6">META-ROCKER</text>
+
+    <!-- Tread dots pattern -->
+    <g fill="#1e3a5f" opacity="0.15">
+      <circle cx="80" cy="280" r="3"/>
+      <circle cx="120" cy="300" r="3"/>
+      <circle cx="160" cy="275" r="3"/>
+      <circle cx="200" cy="295" r="3"/>
+      <circle cx="240" cy="285" r="3"/>
+      <circle cx="280" cy="300" r="3"/>
+      <circle cx="320" cy="275" r="3"/>
+      <circle cx="360" cy="290" r="3"/>
+      <circle cx="400" cy="280" r="3"/>
+      <circle cx="440" cy="300" r="3"/>
+      <circle cx="480" cy="285" r="3"/>
+      <circle cx="520" cy="295" r="3"/>
+      <circle cx="560" cy="280" r="3"/>
+    </g>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">HOKA Clifton 9</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Running Shoe — Outsole View</text>
+</svg>

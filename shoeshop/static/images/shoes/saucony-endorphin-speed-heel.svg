@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="40%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="635" rx="130" ry="22" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(400, 140)">
+    <!-- Outsole -->
+    <ellipse cx="0" cy="465" rx="100" ry="22" fill="#1e293b"/>
+    <rect x="-100" y="465" width="200" height="10" fill="#1e293b"/>
+
+    <!-- Tall heel midsole (PWRRUN PB) -->
+    <path d="M-95,465 L-95,320 Q-95,300 -85,290 L85,290 Q95,300 95,320 L95,465 Z" fill="url(#midsoleGrad)"/>
+
+    <!-- Midsole layers -->
+    <path d="M-88,350 Q-88,340 -85,335 L85,335 Q88,340 88,350 L88,465 L-88,465 Z" fill="#c2410c" opacity="0.35"/>
+
+    <!-- Midsole texture lines -->
+    <g fill="none" stroke="#c2410c" stroke-width="0.8" opacity="0.3">
+      <line x1="-90" y1="340" x2="90" y2="340"/>
+      <line x1="-92" y1="370" x2="92" y2="370"/>
+      <line x1="-94" y1="400" x2="94" y2="400"/>
+      <line x1="-96" y1="430" x2="96" y2="430"/>
+      <line x1="-98" y1="455" x2="98" y2="455"/>
+    </g>
+
+    <!-- Carbon plate hints in midsole -->
+    <line x1="-92" y1="380" x2="92" y2="380" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.4"/>
+
+    <!-- Upper body -->
+    <path d="M-85,290 Q-85,220 -75,180 Q-65,140 -50,110 Q-32,82 -12,66 Q0,58 12,66 Q32,82 50,110 Q65,140 75,180 Q85,220 85,290 Z" fill="url(#upperGrad)"/>
+
+    <!-- Heel counter shape -->
+    <path d="M-72,290 L-72,225 Q-65,175 -48,140 Q-30,108 -8,92 Q0,84 8,92 Q30,108 48,140 Q65,175 72,225 L72,290 Z" fill="#f3f4f6" opacity="0.4"/>
+
+    <!-- Collar opening -->
+    <ellipse cx="0" cy="82" rx="35" ry="15" fill="#1e293b"/>
+
+    <!-- Collar padding -->
+    <ellipse cx="0" cy="82" rx="48" ry="21" fill="none" stroke="#d1d5db" stroke-width="1.8"/>
+
+    <!-- Pull tab -->
+    <rect x="-6" y="30" width="12" height="25" rx="6" fill="#e5e5e5" stroke="#d1d5db" stroke-width="1"/>
+
+    <!-- Saucony river logo on heel -->
+    <g transform="translate(0, 170) scale(1.2)" opacity="0.25">
+      <path d="M-15,-6 L-22,10 L-16,6 L-10,14 L-4,6 L0,14 L4,6 L10,14 L16,6 L22,10 L15,-6 Z" fill="url(#riverGrad)"/>
+    </g>
+
+    <!-- ENDORPHIN SPEED text -->
+    <text x="0" y="252" font-family="Arial,sans-serif" font-weight="900" font-size="9" fill="#ef4444" text-anchor="middle" letter-spacing="1.5">ENDORPHIN SPEED</text>
+
+    <!-- PWRRUN PB label -->
+    <text x="0" y="266" font-family="Arial,sans-serif" font-weight="700" font-size="7" fill="#c2410c" text-anchor="middle" letter-spacing="1">PWRRUN PB</text>
+
+    <!-- Center stitch -->
+    <line x1="0" y1="105" x2="0" y2="275" stroke="#d1d5db" stroke-width="0.8" opacity="0.35"/>
+
+    <!-- Side seams -->
+    <path d="M-45,290 Q-48,240 -42,200 Q-35,160 -25,130" fill="none" stroke="#d1d5db" stroke-width="1" opacity="0.35"/>
+    <path d="M45,290 Q48,240 42,200 Q35,160 25,130" fill="none" stroke="#d1d5db" stroke-width="1" opacity="0.35"/>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">Saucony Endorphin Speed 4</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Racing Shoe — Heel View</text>
+</svg>

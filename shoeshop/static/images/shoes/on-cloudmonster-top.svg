@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="meshTop" width="8" height="14" patternUnits="userSpaceOnUse">
+      <rect width="8" height="14" fill="none"/>
+      <line x1="0" y1="7" x2="8" y2="7" stroke="#d4d4d4" stroke-width="0.5"/>
+      <circle cx="4" cy="3" r="1.2" fill="#ddd"/>
+      <circle cx="4" cy="11" r="1.2" fill="#ddd"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <ellipse cx="400" cy="640" rx="190" ry="26" fill="url(#shadowGrad)"/>
+
+  <!-- Top-down shoe shape -->
+  <path d="M170 350 Q150 260 230 210 Q310 175 400 170 Q500 175 580 210 Q650 260 630 350 L630 520 Q650 570 590 600 Q510 620 400 623 Q300 620 220 595 Q160 565 170 520 Z" fill="url(#bodyGrad)" stroke="#d4d4d4" stroke-width="1.5"/>
+
+  <!-- Engineered mesh texture -->
+  <rect x="195" y="240" width="410" height="260" rx="28" fill="url(#meshTop)" opacity="0.5"/>
+
+  <!-- Green accent line visible at sides -->
+  <path d="M185 430 L615 430" stroke="#22c55e" stroke-width="2.5" fill="none" opacity="0.8"/>
+  <path d="M185 434 L615 434" stroke="#22c55e" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- Tongue center -->
+  <path d="M355 295 Q375 275 400 270 Q425 275 445 295 L455 445 Q425 460 400 463 Q375 460 345 445 Z" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1.5"/>
+
+  <!-- Tongue label -->
+  <rect x="380" y="288" width="40" height="16" rx="8" fill="#22c55e"/>
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">ON</text>
+
+  <!-- Left eyelets -->
+  <circle cx="330" cy="320" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="322" cy="352" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="316" cy="384" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="312" cy="416" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- Right eyelets -->
+  <circle cx="470" cy="320" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="478" cy="352" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="484" cy="384" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="488" cy="416" r="4" fill="#e5e5e5" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- Speed laces -->
+  <line x1="330" y1="320" x2="470" y2="320" stroke="#d4d4d4" stroke-width="1.8"/>
+  <line x1="322" y1="352" x2="478" y2="352" stroke="#d4d4d4" stroke-width="1.8"/>
+  <line x1="316" y1="384" x2="484" y2="384" stroke="#d4d4d4" stroke-width="1.8"/>
+  <line x1="312" y1="416" x2="488" y2="416" stroke="#d4d4d4" stroke-width="1.8"/>
+
+  <!-- Ventilation holes pattern -->
+  <circle cx="235" cy="270" r="2.2" fill="#d4d4d4"/>
+  <circle cx="255" cy="260" r="2.2" fill="#d4d4d4"/>
+  <circle cx="275" cy="253" r="2.2" fill="#d4d4d4"/>
+  <circle cx="295" cy="248" r="2.2" fill="#d4d4d4"/>
+  <circle cx="315" cy="245" r="2.2" fill="#d4d4d4"/>
+  <circle cx="335" cy="243" r="2.2" fill="#d4d4d4"/>
+
+  <circle cx="465" cy="243" r="2.2" fill="#d4d4d4"/>
+  <circle cx="485" cy="245" r="2.2" fill="#d4d4d4"/>
+  <circle cx="505" cy="248" r="2.2" fill="#d4d4d4"/>
+  <circle cx="525" cy="253" r="2.2" fill="#d4d4d4"/>
+  <circle cx="545" cy="260" r="2.2" fill="#d4d4d4"/>
+  <circle cx="565" cy="270" r="2.2" fill="#d4d4d4"/>
+
+  <!-- Stitching -->
+  <path d="M210 290 Q400 255 590 290" stroke="#d4d4d4" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M208 450 Q400 475 592 450" stroke="#d4d4d4" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Midsole edge visible -->
+  <path d="M170 520 Q300 623 400 626 Q500 623 630 520" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M170 522 Q300 628 400 631 Q500 628 630 522" stroke="#e5e5e5" stroke-width="2" fill="none"/>
+
+  <!-- CloudTec pods hint from top -->
+  <rect x="220" y="595" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+  <rect x="270" y="598" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+  <rect x="320" y="600" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+  <rect x="370" y="600" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+  <rect x="420" y="600" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+  <rect x="470" y="598" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+  <rect x="520" y="595" width="40" height="10" rx="5" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.5"/>
+
+  <!-- Collar opening -->
+  <ellipse cx="400" cy="438" rx="40" ry="13" fill="#d4d4d4" stroke="#c0c0c0" stroke-width="1"/>
+</svg>

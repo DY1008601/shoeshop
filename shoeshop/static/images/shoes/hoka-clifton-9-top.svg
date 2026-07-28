@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="560" rx="200" ry="28" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(400, 270)">
+    <!-- Wide outsole (HOKA platform) -->
+    <ellipse cx="0" cy="35" rx="185" ry="255" fill="#1e3a5f"/>
+
+    <!-- Midsole ring -->
+    <ellipse cx="0" cy="30" rx="175" ry="245" fill="url(#midsoleGrad)"/>
+
+    <!-- Midsole lower ring -->
+    <ellipse cx="0" cy="35" rx="175" ry="245" fill="none" stroke="#1d4ed8" stroke-width="3" opacity="0.4"/>
+
+    <!-- Yellow accent ring -->
+    <ellipse cx="0" cy="20" rx="172" ry="242" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.7"/>
+
+    <!-- Upper body -->
+    <ellipse cx="0" cy="25" rx="162" ry="232" fill="url(#upperGrad)"/>
+
+    <!-- Wide toe box (HOKA characteristic) -->
+    <ellipse cx="0" cy="-178" rx="110" ry="55" fill="#bae6fd" opacity="0.4"/>
+
+    <!-- Ventilation mesh pattern -->
+    <g fill="none" stroke="#93c5fd" stroke-width="0.8" opacity="0.35">
+      <ellipse cx="0" cy="-130" rx="135" ry="4"/>
+      <ellipse cx="0" cy="-100" rx="145" ry="4"/>
+      <ellipse cx="0" cy="-70" rx="150" ry="4"/>
+      <ellipse cx="0" cy="-40" rx="155" ry="4"/>
+      <ellipse cx="0" cy="-10" rx="158" ry="4"/>
+      <ellipse cx="0" cy="20" rx="156" ry="4"/>
+      <ellipse cx="0" cy="50" rx="150" ry="4"/>
+      <ellipse cx="0" cy="80" rx="142" ry="4"/>
+      <ellipse cx="0" cy="110" rx="130" ry="4"/>
+      <ellipse cx="0" cy="140" rx="115" ry="4"/>
+    </g>
+
+    <!-- HOKA bird logo on left side -->
+    <path d="M-162,30 Q-130,-20 -110,-50 Q-90,-80 -75,-95 L-62,-96 Q-70,-83 -85,-55 Q-100,-25 -135,35 Z" fill="#2563eb" opacity="0.8"/>
+    <path d="M162,35 Q132,-15 115,-45 Q98,-75 85,-90 L72,-92 Q78,-79 92,-52 Q106,-22 138,38 Z" fill="#2563eb" opacity="0.8"/>
+
+    <!-- Tongue -->
+    <ellipse cx="0" cy="160" rx="55" ry="42" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1.5"/>
+
+    <!-- Lace center line -->
+    <line x1="0" y1="175" x2="0" y2="-55" stroke="#1d4ed8" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,6"/>
+
+    <!-- Eyelets -->
+    <g fill="#1d4ed8" opacity="0.45">
+      <circle cx="-14" cy="150" r="3.5"/>
+      <circle cx="14" cy="150" r="3.5"/>
+      <circle cx="-18" cy="125" r="3.5"/>
+      <circle cx="18" cy="125" r="3.5"/>
+      <circle cx="-22" cy="100" r="3.5"/>
+      <circle cx="22" cy="100" r="3.5"/>
+      <circle cx="-25" cy="75" r="3.5"/>
+      <circle cx="25" cy="75" r="3.5"/>
+      <circle cx="-28" cy="50" r="3.5"/>
+      <circle cx="28" cy="50" r="3.5"/>
+      <circle cx="-28" cy="25" r="3.5"/>
+      <circle cx="28" cy="25" r="3.5"/>
+    </g>
+
+    <!-- Lace zigzag -->
+    <g fill="none" stroke="#2563eb" stroke-width="2" opacity="0.45">
+      <polyline points="-14,150 14,150"/>
+      <polyline points="14,150 -18,125"/>
+      <polyline points="-18,125 18,125"/>
+      <polyline points="18,125 -22,100"/>
+      <polyline points="-22,100 22,100"/>
+      <polyline points="22,100 -25,75"/>
+      <polyline points="-25,75 25,75"/>
+      <polyline points="25,75 -28,50"/>
+    </g>
+
+    <!-- Wide toe box vent dots -->
+    <g fill="#93c5fd" opacity="0.3">
+      <circle cx="-70" cy="-150" r="2"/>
+      <circle cx="-40" cy="-158" r="2"/>
+      <circle cx="0" cy="-160" r="2"/>
+      <circle cx="40" cy="-158" r="2"/>
+      <circle cx="70" cy="-150" r="2"/>
+      <circle cx="-55" cy="-138" r="2"/>
+      <circle cx="-20" cy="-145" r="2"/>
+      <circle cx="55" cy="-138" r="2"/>
+    </g>
+
+    <!-- Toe line -->
+    <path d="M-90,-178 Q0,-202 90,-178" fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.35"/>
+
+    <!-- CLIFTON label -->
+    <text x="0" y="0" font-family="Arial,sans-serif" font-weight="800" font-size="9" fill="#2563eb" text-anchor="middle" opacity="0.5" letter-spacing="2">CLIFTON 9</text>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">HOKA Clifton 9</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Running Shoe — Top-Down View</text>
+</svg>

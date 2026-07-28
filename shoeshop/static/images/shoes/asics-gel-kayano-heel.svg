@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="gelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <pattern id="meshHeel" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="none"/>
+      <circle cx="2" cy="2" r="0.6" fill="#c0c0c0"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <!-- Main heel shape -->
+  <path d="M270 190 Q400 155 530 190 L555 480 Q400 515 245 480 Z" fill="url(#bodyGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Heel counter panels -->
+  <path d="M290 195 Q310 185 400 180 Q490 185 510 195 L510 440 Q400 465 290 440 Z" fill="url(#meshHeel)" opacity="0.3"/>
+
+  <!-- Side panels blue -->
+  <path d="M270 190 Q250 280 250 400 Q250 460 255 480 L310 485 Q315 440 315 400 Q315 280 305 195 Z" fill="url(#gelGrad)" opacity="0.3"/>
+  <path d="M530 190 Q550 280 550 400 Q550 460 545 480 L490 485 Q485 440 485 400 Q485 280 495 195 Z" fill="url(#gelGrad)" opacity="0.3"/>
+
+  <!-- GEL windows in heel -->
+  <ellipse cx="340" cy="430" rx="30" ry="22" fill="url(#gelGrad)" stroke="#0284c7" stroke-width="1.5" opacity="0.8"/>
+  <ellipse cx="340" cy="428" rx="16" ry="11" fill="#7dd3fc" opacity="0.5"/>
+  <ellipse cx="460" cy="430" rx="30" ry="22" fill="url(#gelGrad)" stroke="#0284c7" stroke-width="1.5" opacity="0.8"/>
+  <ellipse cx="460" cy="428" rx="16" ry="11" fill="#7dd3fc" opacity="0.5"/>
+
+  <!-- Collar opening -->
+  <ellipse cx="400" cy="205" rx="80" ry="24" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1.5"/>
+  <ellipse cx="400" cy="208" rx="68" ry="18" fill="#b0bfd0" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Pull tab -->
+  <path d="M365 185 Q355 165 360 158 Q370 152 380 158 Q390 170 400 180 Q410 170 420 158 Q430 152 440 158 Q445 165 435 185" fill="none" stroke="#0ea5e9" stroke-width="3"/>
+
+  <!-- GEL-KAYANO text -->
+  <text x="400" y="355" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0ea5e9" text-anchor="middle" letter-spacing="4">GEL-KAYANO</text>
+
+  <!-- 4D Guidance hints -->
+  <path d="M305 400 Q340 388 370 390" stroke="#6366f1" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M430 390 Q460 388 495 400" stroke="#6366f1" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Stitching -->
+  <path d="M300 240 Q400 220 500 240" stroke="#cbd5e1" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M305 280 Q400 260 495 280" stroke="#cbd5e1" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M300 320 Q400 300 500 320" stroke="#cbd5e1" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Midsole -->
+  <rect x="260" y="480" width="280" height="16" rx="3" fill="url(#midsoleGrad)" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Outsole -->
+  <rect x="260" y="496" width="280" height="10" rx="3" fill="#94a3b8" stroke="#64748b" stroke-width="1"/>
+
+  <!-- FlyteFoam text -->
+  <text x="400" y="491" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle" letter-spacing="2">FlyteFoam</text>
+</svg>

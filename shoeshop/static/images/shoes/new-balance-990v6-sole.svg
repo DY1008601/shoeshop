@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="soleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e5e7eb"/>
+      <stop offset="50%" stop-color="#d1d5db"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="heelGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <pattern id="diamondTread" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="none"/>
+      <polygon points="8,2 14,8 8,14 2,8" fill="none" stroke="#b0b0b0" stroke-width="1"/>
+    </pattern>
+    <pattern id="zigzag" width="20" height="10" patternUnits="userSpaceOnUse">
+      <polyline points="0,5 5,0 10,5 15,0 20,5" fill="none" stroke="#c0c0c0" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <!-- Main outsole shape -->
+  <path d="M220 180 Q200 300 200 420 Q200 560 260 610 Q320 640 400 645 Q500 640 560 600 Q600 550 600 420 Q600 300 580 180 Q520 155 400 150 Q280 155 220 180 Z" fill="url(#soleGrad)" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- Heel - Ndurance rubber -->
+  <path d="M200 500 Q200 560 260 610 Q320 640 400 645 Q500 640 560 600 Q600 550 600 500 Z" fill="url(#heelGrad)" stroke="#334155" stroke-width="1"/>
+
+  <!-- Forefoot diamond tread -->
+  <rect x="230" y="200" width="340" height="180" rx="40" fill="url(#diamondTread)" opacity="0.6"/>
+
+  <!-- Midfoot zigzag tread -->
+  <path d="M240 380 Q400 370 560 380" stroke="none" fill="none"/>
+  <rect x="235" y="380" width="330" height="70" rx="20" fill="url(#zigzag)" opacity="0.5"/>
+
+  <!-- Center split line -->
+  <path d="M400 180 Q400 220 400 260" stroke="#b0b0b0" stroke-width="1.5" fill="none"/>
+  <path d="M400 460 Q400 500 400 540" stroke="#b0b0b0" stroke-width="1.5" fill="none"/>
+
+  <!-- ENCAP label area -->
+  <rect x="300" y="440" width="200" height="30" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
+  <text x="400" y="460" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle" font-weight="bold" letter-spacing="3">ENCAP</text>
+
+  <!-- NDURANCE heel label -->
+  <rect x="320" y="560" width="160" height="24" rx="5" fill="#334155" stroke="#1e293b" stroke-width="1"/>
+  <text x="400" y="577" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle" font-weight="bold" letter-spacing="2">NDURANCE</text>
+
+  <!-- Forefoot flex grooves -->
+  <path d="M270 220 Q340 215 400 218" stroke="#b0b0b0" stroke-width="1" fill="none"/>
+  <path d="M270 250 Q340 245 400 248" stroke="#b0b0b0" stroke-width="1" fill="none"/>
+  <path d="M270 280 Q340 275 400 278" stroke="#b0b0b0" stroke-width="1" fill="none"/>
+  <path d="M270 310 Q340 305 400 308" stroke="#b0b0b0" stroke-width="1" fill="none"/>
+  <path d="M270 340 Q340 335 400 338" stroke="#b0b0b0" stroke-width="1" fill="none"/>
+
+  <!-- Heel tread hex pattern -->
+  <polygon points="320,520 330,515 340,520 340,530 330,535 320,530" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+  <polygon points="360,518 370,513 380,518 380,528 370,533 360,528" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+  <polygon points="400,517 410,512 420,517 420,527 410,532 400,527" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+  <polygon points="440,518 450,513 460,518 460,528 450,533 440,528" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+  <polygon points="480,520 490,515 500,520 500,530 490,535 480,530" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+
+  <!-- Brand text at bottom -->
+  <text x="400" y="630" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle" letter-spacing="4">NEW BALANCE</text>
+  <text x="400" y="648" font-family="Arial, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle" letter-spacing="2">990v6</text>
+
+  <!-- Outline border -->
+  <path d="M220 180 Q200 300 200 420 Q200 560 260 610 Q320 640 400 645 Q500 640 560 600 Q600 550 600 420 Q600 300 580 180 Q520 155 400 150 Q280 155 220 180 Z" fill="none" stroke="#9ca3af" stroke-width="2"/>
+</svg>

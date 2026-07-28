@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="100%" stop-color="#d6d6d6"/>
+    </linearGradient>
+    <linearGradient id="suedeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7d7d7d"/>
+      <stop offset="100%" stop-color="#737373"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="meshTop" width="5" height="10" patternUnits="userSpaceOnUse">
+      <rect width="5" height="10" fill="none"/>
+      <line x1="0" y1="5" x2="5" y2="5" stroke="#d0d0d0" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <ellipse cx="400" cy="650" rx="200" ry="30" fill="url(#shadowGrad)"/>
+
+  <!-- Main shoe top-down oval -->
+  <path d="M180 320 Q180 220 280 180 Q380 160 480 180 Q600 210 620 330 L620 500 Q600 560 480 560 Q380 565 280 560 Q180 550 180 500 Z" fill="url(#bodyGrad)" stroke="#d0d0d0" stroke-width="1.5"/>
+
+  <!-- Toe cap (top area) -->
+  <path d="M180 320 Q180 250 280 210 Q380 190 480 210 Q600 240 620 330 L620 380 Q600 290 480 260 Q380 240 280 260 Q180 290 180 380 Z" fill="url(#suedeGrad)" opacity="0.45"/>
+
+  <!-- Mesh panel center -->
+  <path d="M220 280 Q300 240 400 235 Q500 240 580 280 L580 420 Q500 460 400 465 Q300 460 220 420 Z" fill="url(#meshTop)" opacity="0.5"/>
+
+  <!-- Red N logo on lateral side (left) -->
+  <g transform="rotate(-8, 280, 360)">
+    <path d="M250 340 L290 340 L290 380 L270 380 L270 370 L285 370 L285 350 L250 350 Z" fill="#dc2626"/>
+    <path d="M250 340 L270 340 L270 410 L285 410 L285 420 L250 420 Z" fill="#dc2626"/>
+  </g>
+
+  <!-- Tongue center -->
+  <path d="M350 290 Q370 270 400 265 Q430 270 450 290 L460 430 Q430 440 400 445 Q370 440 340 430 Z" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1.5"/>
+
+  <!-- Tongue label -->
+  <rect x="375" y="280" width="50" height="18" rx="3" fill="#dc2626"/>
+  <text x="400" y="293" font-family="Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">NB</text>
+
+  <!-- Eyelets left side -->
+  <circle cx="330" cy="310" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+  <circle cx="320" cy="340" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+  <circle cx="313" cy="370" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+  <circle cx="308" cy="400" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Eyelets right side -->
+  <circle cx="470" cy="310" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+  <circle cx="480" cy="340" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+  <circle cx="487" cy="370" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+  <circle cx="492" cy="400" r="5" fill="#e5e5e5" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Laces horizontal -->
+  <line x1="330" y1="310" x2="470" y2="310" stroke="#d4d4d4" stroke-width="2.5"/>
+  <line x1="320" y1="340" x2="480" y2="340" stroke="#d4d4d4" stroke-width="2.5"/>
+  <line x1="313" y1="370" x2="487" y2="370" stroke="#d4d4d4" stroke-width="2.5"/>
+  <line x1="308" y1="400" x2="492" y2="400" stroke="#d4d4d4" stroke-width="2.5"/>
+
+  <!-- Stitching lines -->
+  <path d="M230 290 Q340 250 400 248 Q460 250 570 290" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M225 440 Q340 470 400 472 Q460 470 575 440" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Midsole visible from top on edges -->
+  <path d="M180 500 Q280 565 400 568 Q520 565 620 500" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M180 502 Q280 570 400 573 Q520 570 620 502" stroke="#e5e5e5" stroke-width="2" fill="none"/>
+
+  <!-- Toe vent holes -->
+  <circle cx="250" cy="255" r="2.5" fill="#b0b0b0"/>
+  <circle cx="270" cy="250" r="2.5" fill="#b0b0b0"/>
+  <circle cx="290" cy="246" r="2.5" fill="#b0b0b0"/>
+  <circle cx="310" cy="244" r="2.5" fill="#b0b0b0"/>
+  <circle cx="330" cy="242" r="2.5" fill="#b0b0b0"/>
+  <circle cx="350" cy="241" r="2.5" fill="#b0b0b0"/>
+
+  <circle cx="450" cy="241" r="2.5" fill="#b0b0b0"/>
+  <circle cx="470" cy="242" r="2.5" fill="#b0b0b0"/>
+  <circle cx="490" cy="244" r="2.5" fill="#b0b0b0"/>
+  <circle cx="510" cy="246" r="2.5" fill="#b0b0b0"/>
+  <circle cx="530" cy="250" r="2.5" fill="#b0b0b0"/>
+  <circle cx="550" cy="255" r="2.5" fill="#b0b0b0"/>
+
+  <!-- Sock liner / collar opening -->
+  <ellipse cx="400" cy="420" rx="45" ry="15" fill="#d4d4d4" stroke="#c0c0c0" stroke-width="1"/>
+</svg>

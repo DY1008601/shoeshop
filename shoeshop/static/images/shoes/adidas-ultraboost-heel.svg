@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f9fafb"/><stop offset="100%" stop-color="#f3f4f6"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5f5f5"/><stop offset="100%" stop-color="#e8e8e8"/></linearGradient>
+    <linearGradient id="boost" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fafafa"/><stop offset="100%" stop-color="#d1d5db"/></linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="32" fill="url(#bg)"/>
+  <ellipse cx="400" cy="720" rx="100" ry="14" fill="rgba(0,0,0,0.06)"/>
+  <!-- Outsole -->
+  <path d="M280 680 Q340 700 400 700 Q460 700 520 680 Q540 660 540 630 L260 630 Q260 660 280 680Z" fill="#d1d5db"/>
+  <!-- Boost midsole bumps (rear) -->
+  <path d="M260 630 Q280 615 300 630 Q320 615 340 630 Q360 615 380 630 Q400 615 420 630 Q440 615 460 630 Q480 615 500 630 Q520 615 540 630 L560 590 L240 590Z" fill="url(#boost)"/>
+  <!-- Heel upper -->
+  <path d="M240 590 Q250 480 260 380 Q265 340 270 300 L530 300 Q535 340 540 380 Q550 480 560 590Z" fill="url(#body)"/>
+  <!-- Heel counter -->
+  <path d="M280 380 Q275 410 265 460 Q260 490 260 520 Q300 540 400 540 Q500 540 540 520 Q540 490 535 460 Q525 410 520 380" fill="#d4d4d4"/>
+  <!-- TreFoil logo -->
+  <path d="M380 420 Q400 400 420 420" stroke="#1e1e1e" stroke-width="3" fill="none"/>
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#1e1e1e" text-anchor="middle">ULTRABOOST</text>
+  <!-- Collar opening -->
+  <path d="M300 310 Q350 280 400 275 Q450 280 500 310" stroke="#d4d4d4" stroke-width="4" fill="none"/>
+  <!-- Pull tab -->
+  <path d="M370 275 Q400 260 430 275" stroke="#e5e5e5" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <!-- Three stripes on rear -->
+  <rect x="370" y="480" width="60" height="4" rx="2" fill="#1e1e1e"/>
+  <rect x="375" y="492" width="50" height="4" rx="2" fill="#1e1e1e"/>
+  <rect x="380" y="504" width="40" height="4" rx="2" fill="#1e1e1e"/>
+  <text x="400" y="700" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af" text-anchor="middle">HEEL VIEW</text>
+</svg>

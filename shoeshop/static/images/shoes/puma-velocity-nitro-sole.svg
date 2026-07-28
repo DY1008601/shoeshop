@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="soleGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#9ca3af"/>
+      <stop offset="50%" stop-color="#d1d5db"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="nitroGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="550" rx="180" ry="25" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(140, 120)">
+    <!-- Main outsole shape -->
+    <path d="M40,440 Q30,430 25,400 L25,130 Q30,100 45,80 Q65,55 100,45 Q130,35 170,32 Q230,25 290,25 Q350,25 410,32 Q450,35 480,45 Q515,55 535,80 Q550,100 555,130 L555,400 Q550,430 540,440 Q520,460 470,468 Q410,475 340,478 Q280,480 220,478 Q160,475 100,468 Q60,460 40,440 Z" fill="url(#soleGrad)"/>
+
+    <!-- PUMAGRIP rubber zones -->
+    <!-- Forefoot rubber zone -->
+    <path d="M25,130 Q30,100 45,80 Q65,55 100,45 Q130,35 170,32 Q230,25 290,25 Q350,25 410,32 Q450,35 480,45 Q515,55 535,80 Q550,100 555,130 L555,160 Q500,150 290,150 Q80,150 25,160 Z" fill="#374151" opacity="0.8"/>
+
+    <!-- Heel rubber zone -->
+    <path d="M25,400 Q30,430 40,440 Q60,460 100,468 Q160,475 220,478 Q280,480 340,478 Q410,475 470,468 Q520,460 540,440 Q550,430 555,400 L555,370 Q500,380 290,380 Q80,380 25,370 Z" fill="#374151" opacity="0.8"/>
+
+    <!-- NITRO foam visible area (midfoot) -->
+    <path d="M25,220 Q80,210 290,210 Q500,210 555,220 L555,330 Q500,320 290,320 Q80,320 25,330 Z" fill="url(#nitroGrad)" opacity="0.5"/>
+
+    <!-- Flex grooves pattern -->
+    <g fill="none" stroke="#6b7280" stroke-width="1.5" opacity="0.6">
+      <!-- Forefoot grooves -->
+      <path d="M25,140 Q160,130 290,130 Q420,130 555,140"/>
+      <path d="M25,165 Q160,155 290,155 Q420,155 555,165"/>
+      <path d="M25,190 Q160,180 290,180 Q420,180 555,190"/>
+
+      <!-- Midfoot grooves -->
+      <path d="M30,240 Q160,230 290,230 Q420,230 550,240"/>
+      <path d="M30,270 Q160,260 290,260 Q420,260 550,270"/>
+      <path d="M30,300 Q160,290 290,290 Q420,290 550,300"/>
+
+      <!-- Heel grooves -->
+      <path d="M25,355 Q160,345 290,345 Q420,345 555,355"/>
+      <path d="M25,385 Q160,375 290,375 Q420,375 555,385"/>
+      <path d="M25,415 Q160,405 290,405 Q420,405 555,415"/>
+    </g>
+
+    <!-- Deep flex groove channels -->
+    <g fill="none" stroke="#4b5563" stroke-width="2" opacity="0.7">
+      <path d="M25,220 Q160,212 290,210 Q420,210 555,220" stroke-dasharray="8,12"/>
+      <path d="M25,340 Q160,332 290,330 Q420,330 555,340" stroke-dasharray="8,12"/>
+    </g>
+
+    <!-- Arch zone -->
+    <path d="M30,250 Q160,240 290,235 Q420,235 550,250" fill="none" stroke="#d1d5db" stroke-width="3" opacity="0.4"/>
+
+    <!-- PUMA text on sole -->
+    <text x="290" y="300" font-family="Arial,sans-serif" font-weight="900" font-size="28" fill="#374151" text-anchor="middle" opacity="0.5">PUMA</text>
+
+    <!-- PUMAGRIP label -->
+    <text x="290" y="195" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#fff" text-anchor="middle" opacity="0.6">PUMAGRIP</text>
+    <text x="290" y="440" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#fff" text-anchor="middle" opacity="0.6">PUMAGRIP</text>
+
+    <!-- NITRO label on foam area -->
+    <text x="290" y="260" font-family="Arial,sans-serif" font-weight="900" font-size="12" fill="#f97316" text-anchor="middle" opacity="0.7">NITRO</text>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">PUMA Velocity NITRO 3</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Running Shoe — Outsole View</text>
+</svg>

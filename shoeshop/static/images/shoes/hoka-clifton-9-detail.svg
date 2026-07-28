@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="blueBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="midsoleBlock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="yellowAcc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+
+  <!-- Blue banner -->
+  <rect x="32" y="32" width="736" height="130" rx="32" fill="url(#blueBg)"/>
+
+  <!-- Large HOKA text in white -->
+  <text x="400" y="115" font-family="Arial,sans-serif" font-weight="900" font-size="68" fill="#fff" text-anchor="middle" letter-spacing="6">HOKA</text>
+
+  <!-- Blue bird logo graphic -->
+  <g transform="translate(400, 260) scale(1.6)">
+    <path d="M-30,-5 Q-20,-20 -10,-30 Q0,-38 10,-30 Q20,-20 30,-5 Q20,5 10,15 Q0,8 -10,15 Q-20,5 -30,-5 Z" fill="#3b82f6" opacity="0.8"/>
+    <path d="M-18,-2 Q-12,-12 -5,-18 Q0,-22 5,-18 Q12,-12 18,-2 Q12,4 5,10 Q0,6 -5,10 Q-12,4 -18,-2 Z" fill="#2563eb" opacity="0.6"/>
+  </g>
+
+  <!-- CLIFTON 9 subtitle -->
+  <text x="400" y="360" font-family="Arial,sans-serif" font-weight="900" font-size="30" fill="#1e1e1e" text-anchor="middle" letter-spacing="4">CLIFTON 9</text>
+
+  <!-- MAX CUSHION label -->
+  <text x="400" y="395" font-family="Arial,sans-serif" font-weight="400" font-size="14" fill="#6b7280" text-anchor="middle" letter-spacing="6">MAX CUSHION</text>
+
+  <!-- Yellow accent divider -->
+  <line x1="200" y1="420" x2="600" y2="420" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+
+  <!-- Max Cushion midsole illustration panel -->
+  <rect x="120" y="450" width="560" height="80" rx="16" fill="url(#midsoleBlock)" opacity="0.9"/>
+
+  <text x="400" y="500" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#fff" text-anchor="middle" letter-spacing="3">MAX CUSHION MIDSOLE</text>
+
+  <!-- Meta-Rocker illustration -->
+  <g transform="translate(400, 590)">
+    <!-- Curved arrow path -->
+    <path d="M-200,0 Q-160,-40 -100,-30 Q-40,-20 0,-15 Q40,-10 100,-5 Q160,0 200,5" fill="none" stroke="#f59e0b" stroke-width="4" opacity="0.6"/>
+
+    <!-- Arrow head -->
+    <polygon points="205,5 190,-2 195,12" fill="#f59e0b" opacity="0.6"/>
+
+    <!-- Runner feet dots along curve -->
+    <circle cx="-150" cy="-25" r="6" fill="#3b82f6" opacity="0.4"/>
+    <circle cx="-80" cy="-20" r="6" fill="#3b82f6" opacity="0.4"/>
+    <circle cx="-10" cy="-12" r="6" fill="#3b82f6" opacity="0.4"/>
+    <circle cx="60" cy="-2" r="6" fill="#3b82f6" opacity="0.4"/>
+    <circle cx="130" cy="2" r="6" fill="#3b82f6" opacity="0.4"/>
+
+    <!-- META-ROCKER label -->
+    <text x="0" y="30" font-family="Arial,sans-serif" font-weight="900" font-size="12" fill="#f59e0b" text-anchor="middle" letter-spacing="3">META-ROCKER</text>
+  </g>
+
+  <!-- Decorative dots -->
+  <g fill="#3b82f6" opacity="0.2">
+    <circle cx="120" cy="180" r="4"/>
+    <circle cx="680" cy="200" r="3"/>
+    <circle cx="150" cy="430" r="2.5"/>
+    <circle cx="650" cy="440" r="3.5"/>
+    <circle cx="100" cy="580" r="3"/>
+    <circle cx="700" cy="570" r="2"/>
+  </g>
+
+  <!-- Yellow accent dot -->
+  <circle cx="400" cy="420" r="4" fill="url(#yellowAcc)"/>
+
+  <text x="400" y="700" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Running Shoe — Brand Detail</text>
+</svg>

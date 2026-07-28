@@ -1,6 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
-  <rect width="800" height="800" fill="#000000"/>
-  <rect x="20" y="20" width="760" height="760" fill="none" stroke="#FF0000" stroke-width="2" stroke-opacity="0.15" rx="20"/>
-  <text x="400" y="420" text-anchor="middle" fill="#FF0000" font-family="system-ui, sans-serif" font-size="72" font-weight="900" letter-spacing="0.1em">Puma</text>
-  <text x="400" y="480" text-anchor="middle" fill="#FF0000" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="20">PREMIUM SNEAKERS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="formstrip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#4b5563"/>
+    </linearGradient>
+    <linearGradient id="nitro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+  <ellipse cx="380" cy="700" rx="260" ry="24" fill="rgba(0,0,0,0.08)"/>
+  <!-- Sole -->
+  <path d="M160 620 Q160 660 200 660 L580 660 Q640 660 640 630 Q640 590 630 580 L620 620 L160 620Z" fill="url(#sole)"/>
+  <path d="M160 620 L620 620 Q630 590 640 580 L640 560 L160 560Z" fill="url(#sole)"/>
+  <!-- NITRO midsole -->
+  <path d="M160 560 L640 560 Q660 540 660 495 L160 495Z" fill="#fecaca"/>
+  <!-- NITRO foam texture dots -->
+  <circle cx="300" cy="530" r="3" fill="#fb923c" opacity="0.4"/>
+  <circle cx="400" cy="520" r="3" fill="#fb923c" opacity="0.4"/>
+  <circle cx="500" cy="535" r="3" fill="#fb923c" opacity="0.4"/>
+  <circle cx="350" cy="545" r="3" fill="#fb923c" opacity="0.4"/>
+  <circle cx="450" cy="528" r="3" fill="#fb923c" opacity="0.4"/>
+  <circle cx="250" cy="540" r="3" fill="#fb923c" opacity="0.4"/>
+  <circle cx="550" cy="540" r="3" fill="#fb923c" opacity="0.4"/>
+  <!-- Heel -->
+  <path d="M160 200 Q150 300 155 370 Q160 440 160 495 L255 495 Q255 400 245 270 Q240 220 235 200Z" fill="url(#body)"/>
+  <!-- Upper -->
+  <path d="M235 200 Q250 160 295 140 Q375 110 475 120 Q555 130 615 170 Q655 200 665 260 Q675 300 675 350 Q675 440 665 495 L160 495 Q160 400 155 370 Q160 300 160 200Z" fill="url(#body)"/>
+  <!-- Toe cap -->
+  <path d="M615 170 Q655 200 665 260 Q675 300 675 350 Q675 380 670 400 L635 400 Q635 300 615 250Z" fill="#d4d4d4"/>
+  <!-- Mesh lines -->
+  <path d="M320 220 Q380 180 480 180" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <path d="M310 260 Q380 220 500 220" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <path d="M300 300 Q380 260 520 270" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <path d="M290 340 Q380 300 540 320" stroke="#d4d4d4" stroke-width="1.5" fill="none"/>
+  <!-- Puma Formstrip -->
+  <path d="M270 240 L420 220 Q520 200 600 190 L590 220 Q510 230 420 250 L270 270 Z" fill="url(#formstrip)"/>
+  <!-- Collar -->
+  <path d="M160 200 Q170 155 210 135 L240 200Z" fill="#d4d4d4"/>
+  <!-- Tongue -->
+  <path d="M340 115 Q360 75 390 72 Q420 70 440 78 Q460 88 460 108 L460 150 Q440 140 400 140 Q360 140 340 150Z" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/>
+  <!-- Eyelets -->
+  <circle cx="315" cy="185" r="5" fill="#d1d5db"/>
+  <circle cx="335" cy="205" r="5" fill="#d1d5db"/>
+  <circle cx="355" cy="225" r="5" fill="#d1d5db"/>
+  <circle cx="375" cy="245" r="5" fill="#d1d5db"/>
+  <circle cx="395" cy="265" r="5" fill="#d1d5db"/>
+  <!-- Laces -->
+  <path d="M315 185 L385 175" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M335 205 L395 195" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M355 225 L405 215" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M375 245 L415 235" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M395 265 L435 255" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <!-- Puma cat logo hint on heel -->
+  <path d="M210 390 Q220 370 230 390" stroke="#1e1e1e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="400" y="466" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="#1e1e1e" text-anchor="middle" letter-spacing="8">PUMA</text>
+  <text x="400" y="498" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#6b7280" text-anchor="middle" letter-spacing="4">VELOCITY NITRO</text>
 </svg>

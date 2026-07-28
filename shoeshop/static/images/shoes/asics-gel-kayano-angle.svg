@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="stripeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="gelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="meshRun" width="5" height="5" patternUnits="userSpaceOnUse">
+      <rect width="5" height="5" fill="none"/>
+      <circle cx="2.5" cy="2.5" r="0.8" fill="#c0c0c0"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <ellipse cx="400" cy="670" rx="190" ry="26" fill="url(#shadowGrad)"/>
+
+  <!-- Sole outsole -->
+  <path d="M210 570 Q210 620 270 635 L530 635 Q590 620 590 570 L590 555 Q590 545 570 545 L230 545 Q210 545 210 555 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Midsole FlyteFoam -->
+  <path d="M205 530 Q205 575 265 590 L535 590 Q595 575 595 530 L595 505 Q595 495 575 495 L225 495 Q205 495 205 505 Z" fill="url(#midsoleGrad)" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Midsole detail lines -->
+  <path d="M215 540 L585 540" stroke="#e2e8f0" stroke-width="1"/>
+  <path d="M210 560 L590 560" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Upper body -->
+  <path d="M205 505 Q220 300 290 220 Q340 170 400 165 Q460 170 510 220 Q580 300 595 505 Z" fill="url(#bodyGrad)" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Mesh texture overlay -->
+  <path d="M230 490 L230 340 Q260 260 340 200 L340 490 Z" fill="url(#meshRun)" opacity="0.5"/>
+  <path d="M350 490 L350 190 Q400 175 450 190 L450 490 Z" fill="url(#meshRun)" opacity="0.5"/>
+  <path d="M460 490 L460 200 Q540 260 570 340 L570 490 Z" fill="url(#meshRun)" opacity="0.5"/>
+
+  <!-- ASICS Tiger Stripes -->
+  <path d="M290 260 Q310 240 330 230 L330 400 Q300 380 280 340 Z" fill="url(#stripeGrad)" opacity="0.85"/>
+  <path d="M320 250 Q340 230 360 220 L360 410 Q330 390 310 360 Z" fill="url(#stripeGrad)" opacity="0.65"/>
+  <path d="M350 245 Q370 225 390 215 L390 420 Q360 400 340 375 Z" fill="url(#stripeGrad)" opacity="0.5"/>
+
+  <!-- GEL window in heel -->
+  <ellipse cx="535" cy="460" rx="28" ry="18" fill="url(#gelGrad)" stroke="#0284c7" stroke-width="1.5"/>
+  <ellipse cx="535" cy="460" rx="18" ry="10" fill="#7dd3fc" opacity="0.5"/>
+
+  <!-- Toe cap ventilation -->
+  <path d="M205 505 Q235 360 280 300 L280 505 Z" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Tongue -->
+  <path d="M340 165 Q360 145 400 140 Q440 145 460 165 L460 250 Q440 240 400 235 Q360 240 340 250 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Eyelets -->
+  <circle cx="358" cy="220" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="442" cy="220" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="350" cy="255" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="450" cy="255" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="344" cy="290" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="456" cy="290" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="340" cy="325" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="460" cy="325" r="5" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Laces -->
+  <line x1="358" y1="220" x2="442" y2="220" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="350" y1="255" x2="450" y2="255" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="344" y1="290" x2="456" y2="290" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="340" y1="325" x2="460" y2="325" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Heel counter -->
+  <path d="M460 220 Q520 240 570 320 L570 490 L460 490 Z" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- FlyteFoam label -->
+  <text x="500" y="555" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">FlyteFoam</text>
+</svg>

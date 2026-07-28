@@ -1,6 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
-  <rect width="800" height="800" fill="#001B5C"/>
-  <rect x="20" y="20" width="760" height="760" fill="none" stroke="#FF5722" stroke-width="2" stroke-opacity="0.15" rx="20"/>
-  <text x="400" y="420" text-anchor="middle" fill="#FF5722" font-family="system-ui, sans-serif" font-size="72" font-weight="900" letter-spacing="0.1em">ASICS</text>
-  <text x="400" y="480" text-anchor="middle" fill="#FF5722" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="20">PREMIUM SNEAKERS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="gel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="accentStrip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="32" fill="#f0f4f8"/>
+  <ellipse cx="380" cy="700" rx="260" ry="24" fill="rgba(0,0,0,0.08)"/>
+  <!-- Sole -->
+  <path d="M160 620 Q160 660 200 660 L580 660 Q640 660 640 630 Q640 590 630 580 L620 620 L160 620Z" fill="url(#sole)"/>
+  <path d="M160 620 L620 620 Q630 590 640 580 L640 560 L160 560Z" fill="url(#sole)"/>
+  <!-- FlyteFoam midsole -->
+  <path d="M160 560 L640 560 Q660 540 660 495 L160 495Z" fill="#cbd5e1"/>
+  <!-- GEL cushioning window -->
+  <ellipse cx="200" cy="530" rx="28" ry="14" fill="url(#gel)" stroke="#0284c7" stroke-width="2"/>
+  <ellipse cx="200" cy="530" rx="18" ry="8" fill="#7dd3fc" opacity="0.5"/>
+  <!-- Heel -->
+  <path d="M160 195 Q150 300 155 370 Q160 440 160 495 L255 495 Q255 400 245 270 Q240 220 235 195Z" fill="url(#body)"/>
+  <!-- Upper -->
+  <path d="M235 195 Q250 155 295 135 Q375 105 475 115 Q555 125 615 165 Q655 195 665 255 Q675 295 675 345 Q675 440 665 495 L160 495 Q160 400 155 370 Q160 300 160 195Z" fill="url(#body)"/>
+  <!-- Toe cap -->
+  <path d="M615 165 Q655 195 665 255 Q675 295 675 345 Q675 380 670 400 L635 400 Q635 300 615 250Z" fill="#cbd5e1"/>
+  <!-- Mesh lines -->
+  <path d="M320 215 Q380 175 480 175" stroke="#cbd5e1" stroke-width="1.5" fill="none"/>
+  <path d="M310 255 Q380 215 500 215" stroke="#cbd5e1" stroke-width="1.5" fill="none"/>
+  <path d="M300 295 Q380 255 520 265" stroke="#cbd5e1" stroke-width="1.5" fill="none"/>
+  <path d="M290 335 Q380 295 540 315" stroke="#cbd5e1" stroke-width="1.5" fill="none"/>
+  <!-- ASICS stripes (tiger stripes) -->
+  <path d="M260 230 L350 230" stroke="url(#accentStrip)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M250 260 L370 260" stroke="url(#accentStrip)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M240 290 L390 290" stroke="url(#accentStrip)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M230 320 L410 320" stroke="url(#accentStrip)" stroke-width="8" stroke-linecap="round"/>
+  <!-- Heel support clip -->
+  <path d="M195 260 Q190 320 195 400" stroke="#0284c7" stroke-width="3" fill="none"/>
+  <path d="M220 250 Q215 310 220 410" stroke="#0284c7" stroke-width="3" fill="none"/>
+  <!-- Collar -->
+  <path d="M160 195 Q170 150 210 130 L240 195Z" fill="#cbd5e1"/>
+  <!-- Tongue -->
+  <path d="M340 110 Q360 70 390 67 Q420 65 440 73 Q460 83 460 103 L460 145 Q440 135 400 135 Q360 135 340 145Z" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/>
+  <!-- Eyelets -->
+  <circle cx="315" cy="180" r="5" fill="#d1d5db"/>
+  <circle cx="335" cy="200" r="5" fill="#d1d5db"/>
+  <circle cx="355" cy="220" r="5" fill="#d1d5db"/>
+  <circle cx="375" cy="240" r="5" fill="#d1d5db"/>
+  <circle cx="395" cy="260" r="5" fill="#d1d5db"/>
+  <!-- Laces -->
+  <path d="M315 180 L385 170" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M335 200 L395 190" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M355 220 L405 210" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M375 240 L415 230" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <path d="M395 260 L435 250" stroke="#9ca3af" stroke-width="1.5" fill="none"/>
+  <!-- GEL-KAYANO text -->
+  <text x="400" y="460" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#0ea5e9" text-anchor="middle" letter-spacing="4">ASICS</text>
+  <text x="400" y="496" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#6b7280" text-anchor="middle" letter-spacing="4">GEL-KAYANO</text>
 </svg>

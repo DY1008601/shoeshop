@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="100%" stop-color="#d6d6d6"/>
+    </linearGradient>
+    <linearGradient id="suedeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7d7d7d"/>
+      <stop offset="100%" stop-color="#737373"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d1d5db" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#d1d5db" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="meshPattern" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="none"/>
+      <line x1="0" y1="3" x2="6" y2="3" stroke="#d0d0d0" stroke-width="0.5"/>
+      <line x1="3" y1="0" x2="3" y2="6" stroke="#d0d0d0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <ellipse cx="400" cy="680" rx="180" ry="28" fill="url(#shadowGrad)"/>
+
+  <g filter="url(#softShadow)">
+    <!-- Sole outsole -->
+    <path d="M200 580 Q200 620 260 640 L540 640 Q600 620 600 580 L600 560 Q600 550 580 550 L220 550 Q200 550 200 560 Z" fill="#b0b0b0" stroke="#9ca3af" stroke-width="1.5"/>
+
+    <!-- White midsole -->
+    <path d="M195 530 Q195 575 255 595 L545 595 Q605 575 605 530 L605 510 Q605 500 585 500 L215 500 Q195 500 195 510 Z" fill="url(#midsoleGrad)" stroke="#d4d4d4" stroke-width="1"/>
+
+    <!-- ENCAP wedge midsole detail -->
+    <path d="M210 545 L590 545" stroke="#d4d4d4" stroke-width="1"/>
+    <path d="M205 565 L595 565" stroke="#d4d4d4" stroke-width="1"/>
+  </g>
+
+  <!-- Main shoe body upper -->
+  <path d="M195 500 Q215 300 280 220 Q320 180 400 170 Q480 180 540 220 Q590 280 605 500 Z" fill="url(#bodyGrad)" stroke="#d0d0d0" stroke-width="1.5"/>
+
+  <!-- Suede overlay heel -->
+  <path d="M380 170 Q480 180 540 220 Q590 280 605 500 L605 440 Q590 300 540 245 Q480 210 400 205 Q370 204 350 204 Z" fill="url(#suedeGrad)" opacity="0.7"/>
+
+  <!-- Suede toe cap -->
+  <path d="M195 500 Q215 380 260 330 Q290 310 320 300 L320 500 Z" fill="url(#suedeGrad)" opacity="0.6"/>
+
+  <!-- Suede overlay mid-panel -->
+  <path d="M230 500 L230 360 Q240 310 280 275 Q310 250 350 240 L350 500 Z" fill="url(#suedeGrad)" opacity="0.35"/>
+
+  <!-- Mesh texture overlay -->
+  <path d="M280 275 Q310 250 350 240 L350 500 L260 500 L260 360 Q270 320 280 275 Z" fill="url(#meshPattern)" opacity="0.4"/>
+
+  <!-- Tongue -->
+  <path d="M340 170 Q360 150 400 145 Q440 150 460 170 L460 260 Q440 250 400 245 Q360 250 340 260 Z" fill="#f0f0f0" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- Lace eyelets -->
+  <circle cx="365" cy="230" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="435" cy="230" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="358" cy="265" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="442" cy="265" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="352" cy="300" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="448" cy="300" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="348" cy="335" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+  <circle cx="452" cy="335" r="6" fill="#e5e5e5" stroke="#c0c0c0" stroke-width="1"/>
+
+  <!-- Laces -->
+  <line x1="365" y1="230" x2="435" y2="230" stroke="#d4d4d4" stroke-width="2"/>
+  <line x1="358" y1="265" x2="442" y2="265" stroke="#d4d4d4" stroke-width="2"/>
+  <line x1="352" y1="300" x2="448" y2="300" stroke="#d4d4d4" stroke-width="2"/>
+  <line x1="348" y1="335" x2="452" y2="335" stroke="#d4d4d4" stroke-width="2"/>
+
+  <!-- Red N logo - 3/4 angle -->
+  <path d="M420 380 L460 380 L460 420 L440 420 L440 410 L455 410 L455 390 L420 390 Z" fill="#dc2626"/>
+  <path d="M420 380 L440 380 L440 450 L455 450 L455 460 L420 460 Z" fill="#dc2626"/>
+
+  <!-- Counter line / heel detail -->
+  <path d="M380 205 Q400 195 420 200" stroke="#e0e0e0" stroke-width="2" fill="none"/>
+
+  <!-- Heel collar -->
+  <path d="M380 170 Q385 160 400 158 Q415 160 420 170 L425 195 Q405 188 380 195 Z" fill="#e0e0e0" stroke="#d0d0d0" stroke-width="1"/>
+
+  <!-- Pull tab -->
+  <path d="M380 170 Q370 155 365 165 Q370 175 380 185 Q390 175 420 170" stroke="#d4d4d4" stroke-width="2.5" fill="none"/>
+
+  <!-- 990 text on heel -->
+  <text x="395" y="460" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#737373">990</text>
+
+  <!-- Additional detail stitching -->
+  <path d="M320 300 Q370 280 400 278 Q430 280 480 300" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M320 340 Q370 320 400 318 Q430 320 480 340" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Toe perf detail -->
+  <circle cx="230" cy="470" r="2" fill="#b0b0b0"/>
+  <circle cx="245" cy="465" r="2" fill="#b0b0b0"/>
+  <circle cx="260" cy="462" r="2" fill="#b0b0b0"/>
+  <circle cx="275" cy="460" r="2" fill="#b0b0b0"/>
+</svg>

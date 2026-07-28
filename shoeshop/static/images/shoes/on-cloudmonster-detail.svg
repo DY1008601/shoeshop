@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="podGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="greenAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="shadowLight">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#a3a3a3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <!-- Large ON text -->
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="96" font-weight="bold" fill="#262626" text-anchor="middle" letter-spacing="4">ON</text>
+
+  <!-- Swiss flag dot (circle) -->
+  <circle cx="400" cy="160" r="28" fill="#22c55e" opacity="0.2"/>
+  <circle cx="400" cy="160" r="18" fill="#22c55e" opacity="0.4"/>
+  <circle cx="400" cy="160" r="8" fill="#22c55e" opacity="0.7"/>
+
+  <!-- CLOUDMONSTER name -->
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#737373" text-anchor="middle" letter-spacing="8">CLOUDMONSTER</text>
+
+  <!-- CloudTec pod illustration -->
+  <g filter="url(#shadowLight)">
+    <rect x="220" y="460" width="60" height="36" rx="18" fill="url(#podGrad)" stroke="#d4d4d4" stroke-width="1"/>
+    <rect x="290" y="458" width="60" height="36" rx="18" fill="url(#podGrad)" stroke="#d4d4d4" stroke-width="1"/>
+    <rect x="360" y="457" width="60" height="36" rx="18" fill="url(#podGrad)" stroke="#d4d4d4" stroke-width="1"/>
+    <rect x="430" y="457" width="60" height="36" rx="18" fill="url(#podGrad)" stroke="#d4d4d4" stroke-width="1"/>
+    <rect x="500" y="458" width="60" height="36" rx="18" fill="url(#podGrad)" stroke="#d4d4d4" stroke-width="1"/>
+    <rect x="570" y="460" width="60" height="36" rx="18" fill="url(#podGrad)" stroke="#d4d4d4" stroke-width="1"/>
+  </g>
+
+  <!-- Pod gap emphasis -->
+  <path d="M280 460 L280 496" stroke="#d4d4d4" stroke-width="1"/>
+  <path d="M350 458 L350 494" stroke="#d4d4d4" stroke-width="1"/>
+  <path d="M420 457 L420 493" stroke="#d4d4d4" stroke-width="1"/>
+  <path d="M490 457 L490 493" stroke="#d4d4d4" stroke-width="1"/>
+  <path d="M560 458 L560 494" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- CloudTec label under pods -->
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="14" fill="url(#greenAccent)" text-anchor="middle" letter-spacing="5" font-weight="bold">CloudTec</text>
+
+  <!-- Green accent line -->
+  <line x1="250" y1="550" x2="550" y2="550" stroke="#22c55e" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Clean minimalist decorative elements -->
+  <circle cx="260" cy="620" r="4" fill="#22c55e" opacity="0.15"/>
+  <circle cx="400" cy="620" r="4" fill="#22c55e" opacity="0.15"/>
+  <circle cx="540" cy="620" r="4" fill="#22c55e" opacity="0.15"/>
+
+  <!-- Subtle Swiss flag hint mark -->
+  <circle cx="300" cy="340" r="2" fill="#22c55e" opacity="0.3"/>
+  <circle cx="500" cy="340" r="2" fill="#22c55e" opacity="0.3"/>
+
+  <!-- ON secondary text -->
+  <text x="400" y="580" font-family="Arial, sans-serif" font-size="10" fill="#d4d4d4" text-anchor="middle" letter-spacing="8">SWISS ENGINEERING</text>
+</svg>

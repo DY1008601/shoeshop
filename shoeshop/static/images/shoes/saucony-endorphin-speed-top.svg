@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="530" rx="150" ry="20" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(400, 270)">
+    <!-- Outsole outline (narrow racing shoe) -->
+    <ellipse cx="0" cy="30" rx="145" ry="245" fill="#1e293b"/>
+
+    <!-- Midsole ring -->
+    <ellipse cx="0" cy="25" rx="135" ry="235" fill="url(#midsoleGrad)"/>
+
+    <!-- Upper body (narrower racing silhouette) -->
+    <ellipse cx="0" cy="20" rx="122" ry="222" fill="url(#upperGrad)"/>
+
+    <!-- Sleek toe (racing shape) -->
+    <ellipse cx="0" cy="-175" rx="78" ry="48" fill="#f3f4f6" opacity="0.45"/>
+
+    <!-- Speed-oriented mesh pattern -->
+    <g fill="none" stroke="#d1d5db" stroke-width="0.7" opacity="0.3">
+      <ellipse cx="0" cy="-125" rx="100" ry="3.5"/>
+      <ellipse cx="0" cy="-95" rx="108" ry="3.5"/>
+      <ellipse cx="0" cy="-65" rx="114" ry="3.5"/>
+      <ellipse cx="0" cy="-35" rx="118" ry="3.5"/>
+      <ellipse cx="0" cy="-5" rx="120" ry="3.5"/>
+      <ellipse cx="0" cy="25" rx="118" ry="3.5"/>
+      <ellipse cx="0" cy="55" rx="112" ry="3.5"/>
+      <ellipse cx="0" cy="85" rx="104" ry="3.5"/>
+      <ellipse cx="0" cy="115" rx="92" ry="3.5"/>
+      <ellipse cx="0" cy="145" rx="78" ry="3.5"/>
+    </g>
+
+    <!-- Speed lines on upper -->
+    <g fill="none" stroke="#ef4444" stroke-width="0.8" opacity="0.2">
+      <line x1="-60" y1="-170" x2="-50" y2="170"/>
+      <line x1="-30" y1="-175" x2="-25" y2="172"/>
+      <line x1="30" y1="-175" x2="25" y2="172"/>
+      <line x1="60" y1="-170" x2="50" y2="170"/>
+    </g>
+
+    <!-- Saucony river logo on left side -->
+    <path d="M-122,25 Q-95,-20 -78,-48 Q-62,-75 -50,-92 L-38,-93 Q-46,-80 -58,-55 Q-72,-25 -100,30 Z" fill="url(#riverGrad)" opacity="0.8"/>
+
+    <!-- River logo on right side -->
+    <path d="M122,30 Q98,-15 82,-42 Q66,-68 55,-85 L43,-87 Q50,-75 62,-52 Q75,-22 102,35 Z" fill="url(#riverGrad)" opacity="0.8"/>
+
+    <!-- Tongue -->
+    <ellipse cx="0" cy="158" rx="48" ry="38" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1.5"/>
+
+    <!-- Minimal lace center line -->
+    <line x1="0" y1="172" x2="0" y2="-55" stroke="#dc2626" stroke-width="1.2" opacity="0.25" stroke-dasharray="3,5"/>
+
+    <!-- Eyelets (minimal) -->
+    <g fill="#dc2626" opacity="0.4">
+      <circle cx="-12" cy="148" r="3"/>
+      <circle cx="12" cy="148" r="3"/>
+      <circle cx="-16" cy="125" r="3"/>
+      <circle cx="16" cy="125" r="3"/>
+      <circle cx="-20" cy="100" r="3"/>
+      <circle cx="20" cy="100" r="3"/>
+      <circle cx="-22" cy="75" r="3"/>
+      <circle cx="22" cy="75" r="3"/>
+      <circle cx="-24" cy="50" r="3"/>
+      <circle cx="24" cy="50" r="3"/>
+      <circle cx="-24" cy="25" r="3"/>
+      <circle cx="24" cy="25" r="3"/>
+    </g>
+
+    <!-- Lace zigzag -->
+    <g fill="none" stroke="#ef4444" stroke-width="1.8" opacity="0.4">
+      <polyline points="-12,148 12,148"/>
+      <polyline points="12,148 -16,125"/>
+      <polyline points="-16,125 16,125"/>
+      <polyline points="16,125 -20,100"/>
+      <polyline points="-20,100 20,100"/>
+      <polyline points="20,100 -22,75"/>
+      <polyline points="-22,75 22,75"/>
+    </g>
+
+    <!-- Sleek toe line -->
+    <path d="M-70,-175 Q0,-195 70,-175" fill="none" stroke="#d1d5db" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- ENDORPHIN label -->
+    <text x="0" y="0" font-family="Arial,sans-serif" font-weight="800" font-size="8" fill="#ef4444" text-anchor="middle" opacity="0.45" letter-spacing="2">ENDORPHIN</text>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">Saucony Endorphin Speed 4</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Racing Shoe — Top-Down View</text>
+</svg>

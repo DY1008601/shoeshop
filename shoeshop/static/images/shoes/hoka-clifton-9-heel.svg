@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="40%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="640" rx="150" ry="24" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(400, 130)">
+    <!-- Outsole -->
+    <ellipse cx="0" cy="475" rx="110" ry="24" fill="#1e3a5f"/>
+    <rect x="-110" y="475" width="220" height="12" fill="#1e3a5f"/>
+
+    <!-- Very tall thick midsole (HOKA max cushion signature) -->
+    <path d="M-105,475 L-105,320 Q-105,300 -95,290 L95,290 Q105,300 105,320 L105,475 Z" fill="url(#midsoleGrad)"/>
+
+    <!-- Midsole layers -->
+    <path d="M-100,360 Q-100,350 -95,345 L95,345 Q100,350 100,360 L100,475 L-100,475 Z" fill="#1d4ed8" opacity="0.4"/>
+    <path d="M-103,400 Q-103,390 -97,385 L97,385 Q103,390 103,400 L103,475 L-103,475 Z" fill="#1d4ed8" opacity="0.3"/>
+
+    <!-- Midsole texture lines -->
+    <g fill="none" stroke="#1d4ed8" stroke-width="0.8" opacity="0.35">
+      <line x1="-100" y1="330" x2="100" y2="330"/>
+      <line x1="-102" y1="350" x2="102" y2="350"/>
+      <line x1="-104" y1="370" x2="104" y2="370"/>
+      <line x1="-106" y1="420" x2="106" y2="420"/>
+      <line x1="-108" y1="440" x2="108" y2="440"/>
+      <line x1="-109" y1="460" x2="109" y2="460"/>
+    </g>
+
+    <!-- Yellow accent stripe on midsole -->
+    <line x1="-107" y1="390" x2="107" y2="390" stroke="#f59e0b" stroke-width="3" opacity="0.7"/>
+
+    <!-- Extended heel crash pad -->
+    <path d="M-110,450 Q-125,470 -115,490 Q-105,505 -80,505 Q-40,505 0,505 Q40,505 80,505 Q105,505 115,490 Q125,470 110,450" fill="#2563eb" opacity="0.6"/>
+
+    <!-- Upper body -->
+    <path d="M-95,290 Q-95,220 -85,180 Q-75,140 -60,110 Q-40,80 -15,65 Q0,58 15,65 Q40,80 60,110 Q75,140 85,180 Q95,220 95,290 Z" fill="url(#upperGrad)"/>
+
+    <!-- Heel counter shape -->
+    <path d="M-80,290 L-80,225 Q-72,175 -55,140 Q-35,105 -10,90 Q0,82 10,90 Q35,105 55,140 Q72,175 80,225 L80,290 Z" fill="#bae6fd" opacity="0.45"/>
+
+    <!-- Collar opening -->
+    <ellipse cx="0" cy="95" rx="40" ry="16" fill="#1e3a5f"/>
+
+    <!-- Collar padding ring -->
+    <ellipse cx="0" cy="95" rx="52" ry="22" fill="none" stroke="#93c5fd" stroke-width="2"/>
+
+    <!-- Pull tab -->
+    <rect x="-7" y="38" width="14" height="28" rx="7" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1"/>
+
+    <!-- HOKA bird logo on heel -->
+    <g transform="translate(0, 170) scale(1.3)" opacity="0.25">
+      <path d="M-18,-8 L-25,10 L-20,5 L-12,15 L-6,5 L0,15 L6,5 L12,15 L18,5 L22,10 L18,-8 Z" fill="#1d4ed8"/>
+    </g>
+
+    <!-- CLIFTON 9 text -->
+    <text x="0" y="255" font-family="Arial,sans-serif" font-weight="900" font-size="10" fill="#3b82f6" text-anchor="middle" letter-spacing="2">CLIFTON 9</text>
+
+    <!-- MAX CUSHION label -->
+    <text x="0" y="270" font-family="Arial,sans-serif" font-weight="700" font-size="7" fill="#93c5fd" text-anchor="middle" letter-spacing="1.5">MAX CUSHION</text>
+
+    <!-- Center stitch -->
+    <line x1="0" y1="115" x2="0" y2="275" stroke="#93c5fd" stroke-width="1" opacity="0.4"/>
+
+    <!-- Side seams -->
+    <path d="M-50,290 Q-55,240 -50,200 Q-42,160 -30,130" fill="none" stroke="#bae6fd" stroke-width="1.2" opacity="0.4"/>
+    <path d="M50,290 Q55,240 50,200 Q42,160 30,130" fill="none" stroke="#bae6fd" stroke-width="1.2" opacity="0.4"/>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">HOKA Clifton 9</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Running Shoe — Heel View</text>
+</svg>

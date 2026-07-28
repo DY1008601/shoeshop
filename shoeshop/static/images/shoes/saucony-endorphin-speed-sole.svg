@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="soleBase" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="40%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="rubberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="400" cy="545" rx="170" ry="22" fill="url(#shadowGrad)"/>
+
+  <g transform="translate(145, 110)">
+    <!-- Outsole shape -->
+    <path d="M35,440 Q25,430 20,400 L20,140 Q25,112 40,90 Q58,65 90,48 Q120,36 155,30 Q200,22 255,20 Q310,18 365,22 Q400,28 435,38 Q465,50 488,75 Q505,100 510,140 L510,400 Q505,430 495,440 Q475,460 435,468 Q375,476 310,478 Q255,480 200,478 Q145,476 95,468 Q60,462 40,445 Z" fill="url(#soleBase)"/>
+
+    <!-- XT-900 rubber grip zones - forefoot -->
+    <path d="M20,140 Q25,112 40,90 Q58,65 90,48 Q120,36 155,30 Q200,22 255,20 Q310,18 365,22 Q400,28 435,38 Q465,50 488,75 Q505,100 510,140 L510,180 Q450,168 255,165 Q60,168 20,180 Z" fill="url(#rubberGrad)" opacity="0.8"/>
+
+    <!-- XT-900 rubber grip zones - heel -->
+    <path d="M20,400 Q25,430 35,440 Q40,445 60,462 Q95,468 145,476 Q200,478 255,478 Q310,478 375,476 Q435,468 475,460 Q495,440 495,440 Q505,430 510,400 L510,360 Q450,372 255,375 Q60,372 20,360 Z" fill="url(#rubberGrad)" opacity="0.8"/>
+
+    <!-- Carbon plate line (orange dashed) -->
+    <path d="M20,220 Q120,208 255,205 Q390,208 510,220" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="8,6" opacity="0.7"/>
+
+    <!-- SPEEDROLL geometry curve -->
+    <path d="M20,260 Q150,245 255,242 Q380,245 510,260" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Forefoot tread pattern -->
+    <g fill="none" stroke="#1e293b" stroke-width="1.5" opacity="0.5">
+      <path d="M25,155 Q160,145 255,142 Q350,145 505,155"/>
+      <path d="M25,170 Q160,160 255,157 Q350,160 505,170"/>
+      <path d="M22,190 Q160,178 255,175 Q350,178 508,190"/>
+    </g>
+
+    <!-- Flex grooves -->
+    <g fill="none" stroke="#c2410c" stroke-width="1.5" opacity="0.45">
+      <path d="M22,235 Q160,225 255,222 Q350,225 508,235"/>
+      <path d="M22,270 Q160,258 255,255 Q350,258 508,270"/>
+      <path d="M22,305 Q160,293 255,290 Q350,293 508,305"/>
+      <path d="M22,340 Q160,328 255,325 Q350,328 508,340"/>
+      <path d="M22,378 Q160,368 255,365 Q350,368 508,378"/>
+      <path d="M22,412 Q160,402 255,400 Q350,402 508,412"/>
+    </g>
+
+    <!-- PWRRUN PB foam label area -->
+    <text x="255" y="240" font-family="Arial,sans-serif" font-weight="900" font-size="10" fill="#ef4444" text-anchor="middle" opacity="0.6" letter-spacing="1">PWRRUN PB</text>
+
+    <!-- SAUCONY text -->
+    <text x="255" y="295" font-family="Arial,sans-serif" font-weight="900" font-size="26" fill="#c2410c" text-anchor="middle" opacity="0.4" letter-spacing="3">SAUCONY</text>
+
+    <!-- SPEEDROLL label -->
+    <text x="255" y="272" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#dc2626" text-anchor="middle" opacity="0.5">SPEEDROLL</text>
+
+    <!-- XT-900 labels -->
+    <text x="255" y="182" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#fff" text-anchor="middle" opacity="0.5">XT-900</text>
+    <text x="255" y="435" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#fff" text-anchor="middle" opacity="0.5">XT-900</text>
+
+    <!-- Carbon icon -->
+    <g transform="translate(255, 225)">
+      <rect x="-15" y="-3" width="30" height="6" rx="2" fill="#ef4444" opacity="0.3"/>
+      <text x="0" y="2" font-family="Arial,sans-serif" font-weight="700" font-size="5" fill="#ef4444" text-anchor="middle" opacity="0.5">CARBON</text>
+    </g>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">Saucony Endorphin Speed 4</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Racing Shoe — Outsole View</text>
+</svg>

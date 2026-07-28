@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="100%" stop-color="#d6d6d6"/>
+    </linearGradient>
+    <linearGradient id="suedeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7d7d7d"/>
+      <stop offset="50%" stop-color="#737373"/>
+      <stop offset="100%" stop-color="#7d7d7d"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <pattern id="meshHeel" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="none"/>
+      <circle cx="2" cy="2" r="0.5" fill="#d0d0d0"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <!-- Heel counter main shape - rear view -->
+  <path d="M280 200 Q400 170 520 200 L540 480 Q400 510 260 480 Z" fill="url(#bodyGrad)" stroke="#d0d0d0" stroke-width="1.5"/>
+
+  <!-- Suede heel overlay panels -->
+  <path d="M300 200 Q320 190 400 185 Q480 190 500 200 L500 440 Q400 465 300 440 Z" fill="url(#suedeGrad)" opacity="0.55"/>
+
+  <!-- Side suede overlays (left and right wrapping) -->
+  <path d="M280 200 Q260 280 260 400 Q260 460 270 480 L320 480 Q310 440 310 400 Q310 280 320 200 Z" fill="url(#suedeGrad)" opacity="0.4"/>
+  <path d="M520 200 Q540 280 540 400 Q540 460 530 480 L480 480 Q490 440 490 400 Q490 280 480 200 Z" fill="url(#suedeGrad)" opacity="0.4"/>
+
+  <!-- Mesh panel center -->
+  <path d="M340 210 Q400 195 460 210 L460 430 Q400 450 340 430 Z" fill="url(#meshHeel)" opacity="0.4"/>
+
+  <!-- Collar opening (top) -->
+  <ellipse cx="400" cy="215" rx="80" ry="22" fill="#d4d4d4" stroke="#c0c0c0" stroke-width="1.5"/>
+  <ellipse cx="400" cy="218" rx="70" ry="18" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/>
+
+  <!-- Pull tab at top -->
+  <path d="M370 195 Q360 175 365 168 Q375 160 385 168 Q390 180 400 190 Q410 180 415 168 Q425 160 435 168 Q440 175 430 195" fill="none" stroke="#d4d4d4" stroke-width="3"/>
+  <rect x="380" y="180" width="40" height="8" rx="3" fill="#dc2626" opacity="0.3"/>
+
+  <!-- Red NB logo on heel -->
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#dc2626" text-anchor="middle" letter-spacing="4">NB</text>
+
+  <!-- ENCAP midsole support -->
+  <rect x="275" y="475" width="250" height="18" rx="4" fill="url(#midsoleGrad)" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- Outsole -->
+  <rect x="275" y="493" width="250" height="12" rx="4" fill="#b0b0b0" stroke="#9ca3af" stroke-width="1"/>
+
+  <!-- ENCAP wedge detail lines -->
+  <path d="M285 500 Q400 510 515 500" stroke="#9ca3af" stroke-width="1" fill="none"/>
+
+  <!-- 990 text -->
+  <text x="400" y="405" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#737373" text-anchor="middle" letter-spacing="2">990</text>
+
+  <!-- Stitching lines -->
+  <path d="M310 240 Q400 225 490 240" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M315 280 Q400 265 485 280" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <path d="M310 320 Q400 305 490 320" stroke="#c0c0c0" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Midsole ENCAP text -->
+  <text x="400" y="488" font-family="Arial, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle" letter-spacing="2">ENCAP</text>
+</svg>

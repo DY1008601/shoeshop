@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="cloudPod" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#e8e8e8"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="meshOn" width="5" height="5" patternUnits="userSpaceOnUse">
+      <rect width="5" height="5" fill="none"/>
+      <circle cx="2.5" cy="2.5" r="0.8" fill="#d4d4d4"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="#f9fafb"/>
+
+  <ellipse cx="400" cy="670" rx="170" ry="24" fill="url(#shadowGrad)"/>
+
+  <!-- CloudTec pods (bottom layer) -->
+  <rect x="225" y="590" width="55" height="28" rx="14" fill="url(#cloudPod)" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="285" y="590" width="55" height="28" rx="14" fill="url(#cloudPod)" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="345" y="590" width="55" height="28" rx="14" fill="url(#cloudPod)" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="405" y="590" width="55" height="28" rx="14" fill="url(#cloudPod)" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="465" y="590" width="55" height="28" rx="14" fill="url(#cloudPod)" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="525" y="588" width="55" height="28" rx="14" fill="url(#cloudPod)" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- Midsole base -->
+  <rect x="210" y="585" width="380" height="8" rx="4" fill="url(#midsoleGrad)" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Upper body -->
+  <path d="M210 500 Q225 300 295 220 Q345 170 400 165 Q455 170 505 220 Q575 300 590 500 L590 580 L210 580 Z" fill="url(#bodyGrad)" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Mesh texture overlay -->
+  <path d="M230 490 L230 340 Q260 260 340 200 L340 490 Z" fill="url(#meshOn)" opacity="0.4"/>
+  <path d="M350 490 L350 190 Q400 175 450 190 L450 490 Z" fill="url(#meshOn)" opacity="0.4"/>
+  <path d="M460 490 L460 200 Q540 260 570 340 L570 490 Z" fill="url(#meshOn)" opacity="0.4"/>
+
+  <!-- Green accent stripe -->
+  <path d="M225 470 L580 470" stroke="#22c55e" stroke-width="2.5" fill="none" opacity="0.9"/>
+  <path d="M225 475 L580 475" stroke="#22c55e" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Tongue -->
+  <path d="M345 165 Q365 145 400 140 Q435 145 455 165 L455 250 Q435 240 400 235 Q365 240 345 250 Z" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Speed lacing eyelets -->
+  <circle cx="360" cy="220" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="440" cy="220" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="352" cy="255" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="448" cy="255" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="346" cy="290" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="454" cy="290" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="342" cy="325" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+  <circle cx="458" cy="325" r="4" fill="#e0e0e0" stroke="#d4d4d4" stroke-width="1"/>
+
+  <!-- Speed laces -->
+  <line x1="360" y1="220" x2="440" y2="220" stroke="#d4d4d4" stroke-width="1.8"/>
+  <line x1="352" y1="255" x2="448" y2="255" stroke="#d4d4d4" stroke-width="1.8"/>
+  <line x1="346" y1="290" x2="454" y2="290" stroke="#d4d4d4" stroke-width="1.8"/>
+  <line x1="342" y1="325" x2="458" y2="325" stroke="#d4d4d4" stroke-width="1.8"/>
+
+  <!-- Heel counter -->
+  <path d="M460 220 Q530 240 575 320 L575 480 L460 480 Z" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- ON brand mark on heel -->
+  <text x="540" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#a3a3a3">ON</text>
+
+  <!-- Toe cap -->
+  <path d="M210 500 Q240 360 285 300 L285 500 Z" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Ventilation holes -->
+  <circle cx="255" cy="440" r="2.5" fill="#d4d4d4"/>
+  <circle cx="270" cy="432" r="2.5" fill="#d4d4d4"/>
+  <circle cx="285" cy="426" r="2.5" fill="#d4d4d4"/>
+  <circle cx="300" cy="422" r="2.5" fill="#d4d4d4"/>
+  <circle cx="315" cy="418" r="2.5" fill="#d4d4d4"/>
+
+  <!-- Green accent heel detail -->
+  <path d="M555 440 L575 440" stroke="#22c55e" stroke-width="2" fill="none"/>
+</svg>

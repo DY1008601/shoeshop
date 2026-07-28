@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="formstripGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#4b5563"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="40%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="nitroAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="dropShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+
+  <!-- Shadow ellipse -->
+  <ellipse cx="400" cy="650" rx="220" ry="28" fill="url(#shadowGrad)"/>
+
+  <!-- Shoe body - 3/4 perspective -->
+  <g filter="url(#dropShadow)" transform="translate(80, 60) rotate(-6, 320, 340)">
+    <!-- Outsole -->
+    <path d="M80,560 Q60,565 55,555 L55,540 Q60,535 70,535 L540,535 Q555,535 560,540 L560,555 Q555,565 530,560 Z" fill="#374151"/>
+
+    <!-- Midsole - NITRO foam -->
+    <path d="M70,450 Q55,460 45,500 L45,535 Q60,530 70,535 L540,535 Q550,530 565,535 L565,490 Q555,455 540,450 Z" fill="url(#midsoleGrad)"/>
+
+    <!-- NITRO orange speckle dots on midsole -->
+    <g fill="#fbbf24" opacity="0.7">
+      <circle cx="100" cy="500" r="3"/>
+      <circle cx="140" cy="515" r="2.5"/>
+      <circle cx="180" cy="490" r="3.5"/>
+      <circle cx="220" cy="520" r="2"/>
+      <circle cx="260" cy="505" r="3"/>
+      <circle cx="300" cy="495" r="2.5"/>
+      <circle cx="340" cy="525" r="3"/>
+      <circle cx="380" cy="500" r="2"/>
+      <circle cx="420" cy="510" r="3.5"/>
+      <circle cx="460" cy="495" r="2.5"/>
+      <circle cx="500" cy="520" r="3"/>
+      <circle cx="530" cy="505" r="2"/>
+      <circle cx="120" cy="485" r="2"/>
+      <circle cx="200" cy="510" r="3"/>
+      <circle cx="280" cy="518" r="2.5"/>
+      <circle cx="360" cy="510" r="2"/>
+      <circle cx="440" cy="518" r="3"/>
+      <circle cx="510" cy="510" r="2.5"/>
+    </g>
+
+    <!-- Upper body -->
+    <path d="M65,440 L65,280 Q68,200 140,160 Q200,130 260,125 Q340,118 410,125 Q480,135 530,170 Q560,195 560,250 L565,440 Z" fill="url(#upperGrad)"/>
+
+    <!-- Mesh texture lines on upper -->
+    <g stroke="#d1d5db" stroke-width="0.8" opacity="0.5">
+      <line x1="120" y1="280" x2="520" y2="280"/>
+      <line x1="110" y1="310" x2="535" y2="310"/>
+      <line x1="100" y1="340" x2="540" y2="340"/>
+      <line x1="95" y1="370" x2="545" y2="370"/>
+      <line x1="90" y1="400" x2="550" y2="400"/>
+    </g>
+
+    <!-- Toe cap -->
+    <path d="M65,440 Q60,380 90,320 Q100,290 130,260 Q145,245 170,235 Q190,228 210,225" fill="none" stroke="#d1d5db" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Puma Formstrip -->
+    <path d="M130,280 Q180,240 260,220 Q340,205 420,215 Q460,222 490,240 L500,320 Q480,310 420,295 Q340,280 260,295 Q180,310 130,340 Z" fill="url(#formstripGrad)"/>
+
+    <!-- Formstrip inner highlight -->
+    <path d="M150,285 Q200,252 270,232 Q340,220 410,226 Q450,232 475,248 L483,310 Q465,302 410,290 Q340,278 270,290 Q200,304 150,330 Z" fill="#6b7280" opacity="0.4"/>
+
+    <!-- Tongue -->
+    <path d="M250,120 Q260,100 280,95 Q300,92 320,95 Q340,100 350,120 L360,160 Q350,155 320,152 Q290,150 260,155 Q250,157 245,160 Z" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/>
+
+    <!-- Lace system -->
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.5" opacity="0.7">
+      <path d="M220,175 Q250,185 280,178"/>
+      <path d="M210,200 Q250,212 290,204"/>
+      <path d="M205,228 Q250,242 295,232"/>
+      <path d="M200,256 Q250,272 300,260"/>
+      <path d="M195,284 Q250,302 305,288"/>
+      <path d="M190,312 Q250,332 310,316"/>
+    </g>
+
+    <!-- Eyelets -->
+    <g fill="#1e1e1e" opacity="0.5">
+      <circle cx="215" cy="177" r="4"/>
+      <circle cx="285" cy="180" r="4"/>
+      <circle cx="207" cy="202" r="4"/>
+      <circle cx="293" cy="206" r="4"/>
+      <circle cx="202" cy="230" r="4"/>
+      <circle cx="298" cy="234" r="4"/>
+      <circle cx="197" cy="258" r="4"/>
+      <circle cx="303" cy="262" r="4"/>
+      <circle cx="192" cy="286" r="4"/>
+      <circle cx="308" cy="290" r="4"/>
+      <circle cx="187" cy="314" r="4"/>
+      <circle cx="313" cy="318" r="4"/>
+    </g>
+
+    <!-- Heel counter -->
+    <path d="M530,170 Q545,210 550,260 Q555,320 552,380 L565,380 Q565,320 562,260 Q558,200 540,170 Z" fill="#d1d5db" opacity="0.5"/>
+
+    <!-- Pull tab -->
+    <path d="M540,160 Q550,145 555,150 Q558,155 560,170" fill="none" stroke="#e5e5e5" stroke-width="3"/>
+
+    <!-- NITRO branding on midsole -->
+    <text x="420" y="510" font-family="Arial,sans-serif" font-weight="900" font-size="14" fill="#fff" opacity="0.8">NITRO</text>
+
+    <!-- Collar line -->
+    <path d="M260,125 Q300,115 350,118 Q400,120 450,130 Q510,145 535,175" fill="none" stroke="#d1d5db" stroke-width="1.5"/>
+  </g>
+
+  <!-- Product label -->
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">PUMA Velocity NITRO 3</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Running Shoe — 3/4 Angle View</text>
+</svg>

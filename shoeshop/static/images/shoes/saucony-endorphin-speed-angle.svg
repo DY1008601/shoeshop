@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#e5e5e5"/>
+    </linearGradient>
+    <linearGradient id="midsoleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="dropShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad)"/>
+  <ellipse cx="380" cy="630" rx="190" ry="24" fill="url(#shadowGrad)"/>
+
+  <g filter="url(#dropShadow)" transform="translate(90, 70) rotate(-4, 310, 330)">
+    <!-- Outsole -->
+    <path d="M80,540 Q60,545 50,530 L50,512 Q60,505 70,505 L520,505 Q535,505 545,512 L545,530 Q540,545 520,540 Z" fill="#1e293b"/>
+
+    <!-- Midsole - PWRRUN PB foam -->
+    <path d="M55,420 Q45,430 38,470 L38,505 Q58,500 70,505 L520,505 Q535,500 555,505 L555,460 Q545,425 535,420 Z" fill="url(#midsoleGrad)"/>
+
+    <!-- SPEEDROLL curved geometry -->
+    <path d="M38,440 Q42,450 55,458 Q80,470 110,478 Q160,488 220,492 Q300,496 380,490 Q450,482 500,470 Q535,460 555,445" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Carbon plate hint line -->
+    <path d="M45,455 Q100,445 200,438 Q320,430 440,435 Q520,440 550,445" fill="none" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="6,4" opacity="0.6"/>
+
+    <!-- Upper body -->
+    <path d="M45,410 L45,230 Q48,150 120,110 Q170,80 230,68 Q300,58 380,62 Q450,68 500,90 Q530,108 545,150 Q550,185 550,230 L550,410 Z" fill="url(#upperGrad)"/>
+
+    <!-- Engineered mesh pattern -->
+    <g fill="none" stroke="#d1d5db" stroke-width="0.7" opacity="0.35">
+      <line x1="90" y1="240" x2="520" y2="240"/>
+      <line x1="80" y1="265" x2="530" y2="265"/>
+      <line x1="75" y1="290" x2="535" y2="290"/>
+      <line x1="70" y1="315" x2="540" y2="315"/>
+      <line x1="65" y1="340" x2="545" y2="340"/>
+      <line x1="60" y1="365" x2="548" y2="365"/>
+      <line x1="55" y1="390" x2="550" y2="390"/>
+    </g>
+
+    <!-- Toe cap -->
+    <path d="M45,410 Q40,340 65,280 Q80,240 105,210 Q120,190 140,175 Q155,165 170,160" fill="none" stroke="#d1d5db" stroke-width="1" opacity="0.45"/>
+
+    <!-- Saucony river logo stripe (orange-red gradient) -->
+    <path d="M100,260 Q140,225 210,205 Q290,185 380,188 Q430,195 470,210 Q505,222 525,245 L535,310 Q500,295 450,282 Q385,270 320,272 Q260,278 195,295 Q140,312 100,340 Z" fill="url(#riverGrad)" opacity="0.85"/>
+
+    <!-- River logo highlight -->
+    <path d="M115,265 Q150,235 215,218 Q290,198 375,200 Q420,206 455,220 Q485,232 505,252 L512,300 Q480,286 435,275 Q378,263 320,265 Q265,270 205,284 Q155,298 118,322 Z" fill="#fbbf24" opacity="0.25"/>
+
+    <!-- Tongue -->
+    <path d="M220,62 Q228,45 245,38 Q260,34 280,38 Q295,42 305,60 L315,110 Q305,105 280,100 Q255,97 235,100 Q228,102 222,108 Z" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/>
+
+    <!-- Lace system -->
+    <g fill="none" stroke="#ef4444" stroke-width="2" opacity="0.55">
+      <path d="M210,120 Q240,130 270,124"/>
+      <path d="M200,148 Q240,160 280,152"/>
+      <path d="M195,175 Q240,190 285,178"/>
+      <path d="M190,202 Q240,220 290,206"/>
+      <path d="M185,230 Q240,250 295,234"/>
+      <path d="M180,258 Q240,280 300,262"/>
+    </g>
+
+    <!-- Eyelets -->
+    <g fill="#dc2626" opacity="0.45">
+      <circle cx="205" cy="122" r="3.5"/>
+      <circle cx="275" cy="126" r="3.5"/>
+      <circle cx="197" cy="150" r="3.5"/>
+      <circle cx="283" cy="154" r="3.5"/>
+      <circle cx="192" cy="177" r="3.5"/>
+      <circle cx="288" cy="180" r="3.5"/>
+      <circle cx="187" cy="204" r="3.5"/>
+      <circle cx="293" cy="208" r="3.5"/>
+      <circle cx="182" cy="232" r="3.5"/>
+      <circle cx="298" cy="236" r="3.5"/>
+      <circle cx="177" cy="260" r="3.5"/>
+      <circle cx="303" cy="264" r="3.5"/>
+    </g>
+
+    <!-- Heel counter -->
+    <path d="M500,90 Q525,130 538,175 Q545,220 542,270 L520,270 Q520,230 515,185 Q508,140 495,105 Z" fill="#d1d5db" opacity="0.35"/>
+
+    <!-- SPEEDROLL label on midsole -->
+    <text x="420" y="480" font-family="Arial,sans-serif" font-weight="900" font-size="11" fill="#fff" opacity="0.6" letter-spacing="1">SPEEDROLL</text>
+
+    <!-- Collar -->
+    <path d="M230,65 Q280,52 330,56 Q380,60 430,70 Q480,82 500,100" fill="none" stroke="#d1d5db" stroke-width="1.2"/>
+
+    <!-- Sleek racing silhouette curve -->
+    <path d="M170,160 Q230,140 300,130 Q380,120 460,135 Q510,148 540,175" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <text x="400" y="750" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#1e1e1e" text-anchor="middle">Saucony Endorphin Speed 4</text>
+  <text x="400" y="775" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#9ca3af" text-anchor="middle">Racing Shoe — 3/4 Angle View</text>
+</svg>
