@@ -16,7 +16,7 @@ function variant(id: string, size: string, price: string, compareAt?: string) {
 	};
 }
 
-const sizes = ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'];
+const sizes = ['US 7', 'US 7.5', 'US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11', 'US 11.5', 'US 12', 'US 13'];
 
 function variants(basePrice: string, salePrice?: string) {
 	const edges: ReturnType<typeof variant>[] = [];
