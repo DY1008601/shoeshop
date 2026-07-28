@@ -22,7 +22,6 @@
 
 	const languages = [
 		{ code: 'en', label: 'EN' },
-		{ code: 'fr', label: 'FR' },
 		{ code: 'de', label: 'DE' },
 		{ code: 'it', label: 'IT' },
 		{ code: 'es', label: 'ES' }

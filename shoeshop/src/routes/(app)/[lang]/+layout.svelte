@@ -8,7 +8,7 @@
 
 	let { children, data } = $props();
 
-	const locales = ['en', 'fr', 'de', 'it', 'es'];
+	const locales = ['en', 'de', 'it', 'es'];
 	let lang = $derived($page.params.lang || 'en');
 	let path = $derived($page.url.pathname.replace(/^\/[a-z]{2}/, '') || '/');
 	let siteUrl = $derived(typeof window !== 'undefined' ? window.location.origin : '');
