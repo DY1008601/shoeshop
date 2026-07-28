@@ -4,6 +4,7 @@
 	import HeroSlider from '$lib/components/home/HeroSlider.svelte';
 	import Testimonials from '$lib/components/home/Testimonials.svelte';
 	import RecentlyViewed from '$lib/components/product/RecentlyViewed.svelte';
+	import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 	import { products } from '$lib/data/products';
 
 	let lang = $derived($page.params.lang || 'en');
@@ -67,6 +68,16 @@
 </section>
 
 <Testimonials />
+
+<section class="bg-gray-50 py-16">
+	<div class="mx-auto max-w-7xl px-4 text-center">
+		<h2 class="mb-4 text-2xl font-bold text-gray-900">Join Our Newsletter</h2>
+		<p class="mb-6 text-gray-600">Get the latest sneaker drops and exclusive offers straight to your inbox.</p>
+		<div class="flex justify-center">
+			<NewsletterForm />
+		</div>
+	</div>
+</section>
 
 <section class="mx-auto max-w-7xl px-4 pb-16">
 	<RecentlyViewed />
