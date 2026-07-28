@@ -21,10 +21,7 @@
 	]);
 
 	const languages = [
-		{ code: 'en', label: 'EN' },
-		{ code: 'de', label: 'DE' },
-		{ code: 'it', label: 'IT' },
-		{ code: 'es', label: 'ES' }
+		{ code: 'en', label: 'EN' }
 	];
 </script>
 
