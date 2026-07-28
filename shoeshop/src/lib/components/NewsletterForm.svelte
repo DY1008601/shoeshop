@@ -40,7 +40,7 @@
 				bind:value={email}
 				placeholder="your@email.com"
 				required
-				class="w-full max-w-xs rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-gray-500 focus:outline-none"
+				class="w-full min-w-[280px] rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-gray-500 focus:outline-none sm:w-72"
 			/>
 			<button
 				type="submit"
