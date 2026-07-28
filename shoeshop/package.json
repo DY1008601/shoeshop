@@ -19,11 +19,16 @@
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
 		"@tailwindcss/typography": "^0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
+		"@types/bcryptjs": "^3.0.0",
 		"mdsvex": "^0.12.8",
 		"svelte": "^5.56.1",
 		"svelte-check": "^4.6.0",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^6.0.3",
 		"vite": "^8.0.16"
+	},
+	"dependencies": {
+		"bcryptjs": "^3.0.3",
+		"better-sqlite3": "^13.0.1"
 	}
 }
