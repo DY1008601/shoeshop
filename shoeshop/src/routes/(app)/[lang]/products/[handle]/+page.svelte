@@ -36,7 +36,6 @@
 	let product = $derived(products.find((p) => p.handle === $page.params.handle));
 
 	let selectedSize = $state('');
-	let selectedColor = $state('');
 	let addedToCart = $state(false);
 
 	const sampleReviews = [
@@ -48,25 +47,14 @@
 	let availableSizes = $derived(
 		product
 			? [...new Set(product.variants.edges
-				.filter((v) => !selectedColor || v.node.selectedOptions.find((o) => o.name === 'Color')?.value === selectedColor)
 				.map((v) => v.node.selectedOptions.find((o) => o.name === 'Size')?.value)
-				.filter(Boolean))]
-			: []
-	);
-
-	let availableColors = $derived(
-		product
-			? [...new Set(product.variants.edges
-				.map((v) => v.node.selectedOptions.find((o) => o.name === 'Color')?.value)
 				.filter(Boolean))]
 			: []
 	);
 
 	let selectedVariant = $derived(
 		product?.variants.edges.find(
-			(v) =>
-				v.node.selectedOptions.find((o) => o.name === 'Size')?.value === selectedSize &&
-				(!selectedColor || v.node.selectedOptions.find((o) => o.name === 'Color')?.value === selectedColor)
+			(v) => v.node.selectedOptions.find((o) => o.name === 'Size')?.value === selectedSize
 		)?.node ?? null
 	);
 
@@ -157,33 +145,11 @@
 					{/if}
 				</div>
 
-				{#if availableColors.length > 0}
-					<div class="mt-6">
-						<h3 class="text-sm font-medium text-gray-900">Color</h3>
-						<div class="mt-2 flex flex-wrap gap-2">
-							{#each availableColors as color}
-								<button
-									onclick={() => { selectedColor = color; selectedSize = ''; }}
-									class="rounded-lg border px-4 py-2 text-sm transition"
-									class:border-gray-900={selectedColor === color}
-									class:bg-gray-900={selectedColor === color}
-									class:text-white={selectedColor === color}
-									class:border-gray-300={selectedColor !== color}
-									class:text-gray-700={selectedColor !== color}
-									class:hover:border-gray-500={selectedColor !== color}
-								>
-									{color}
-								</button>
-							{/each}
-						</div>
-					</div>
-				{/if}
-
 				<div class="mt-6">
 					<h3 class="text-sm font-medium text-gray-900">Size</h3>
 					<div class="mt-2 flex flex-wrap gap-2">
 						{#each availableSizes as size}
-							{@const variant = product.variants.edges.find((v) => v.node.selectedOptions.find((o) => o.name === 'Size')?.value === size && (!selectedColor || v.node.selectedOptions.find((o) => o.name === 'Color')?.value === selectedColor))?.node}
+							{@const variant = product.variants.edges.find((v) => v.node.selectedOptions.find((o) => o.name === 'Size')?.value === size)?.node}
 							<button
 								onclick={() => (selectedSize = size)}
 								disabled={!variant?.availableForSale}
