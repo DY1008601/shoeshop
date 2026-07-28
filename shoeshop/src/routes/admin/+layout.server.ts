@@ -6,7 +6,7 @@ export const load: LayoutServerLoad = async ({ url, cookies }) => {
 	if (url.pathname === '/admin/login') return {};
 
 	const token = cookies.get(SESSION_COOKIE);
-	if (!token || !validateSession(token)) {
+	if (!token || !(await validateSession(token))) {
 		throw redirect(302, '/admin/login');
 	}
 

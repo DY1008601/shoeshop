@@ -29,6 +29,7 @@
 	},
 	"dependencies": {
 		"bcryptjs": "^3.0.3",
-		"better-sqlite3": "^13.0.1"
+		"better-sqlite3": "^13.0.1",
+		"sql.js": "^1.14.1"
 	}
 }

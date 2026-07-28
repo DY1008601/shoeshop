@@ -1,4 +1,4 @@
-import { getDb } from './db';
+import { initDb, queryOne, queryAll, execRun, saveDb } from './db';
 import type { Product } from '$lib/shopify/types';
 
 function slugify(text: string): string {
@@ -28,30 +28,28 @@ export interface ProductImageRow {
 	position: number;
 }
 
-export function listProducts(): Product[] {
-	const db = getDb();
-	const rows = db.prepare('SELECT * FROM products WHERE status = ? ORDER BY created_at DESC').all('active') as ProductRow[];
+export async function listProducts(): Promise<Product[]> {
+	const db = await initDb();
+	const rows = queryAll(db, "SELECT * FROM products WHERE status = 'active' ORDER BY created_at DESC");
 
-	return rows.map((row) => {
-		const images = db.prepare('SELECT * FROM product_images WHERE product_id = ? ORDER BY position').all(row.id) as ProductImageRow[];
-		const sizes = db.prepare('SELECT size FROM product_sizes WHERE product_id = ?').all(row.id) as { size: string }[];
-
+	return rows.map((row: any) => {
+		const images = queryAll(db, 'SELECT * FROM product_images WHERE product_id = ? ORDER BY position', [row.id]);
+		const sizes = queryAll(db, 'SELECT size FROM product_sizes WHERE product_id = ?', [row.id]);
 		return rowToProduct(row, images, sizes);
 	});
 }
 
-export function getProduct(id: string): Product | null {
-	const db = getDb();
-	const row = db.prepare('SELECT * FROM products WHERE id = ?').get(id) as ProductRow | undefined;
+export async function getProduct(id: string): Promise<Product | null> {
+	const db = await initDb();
+	const row = queryOne(db, 'SELECT * FROM products WHERE id = ?', [id]);
 	if (!row) return null;
 
-	const images = db.prepare('SELECT * FROM product_images WHERE product_id = ? ORDER BY position').all(id) as ProductImageRow[];
-	const sizes = db.prepare('SELECT size FROM product_sizes WHERE product_id = ?').all(id) as { size: string }[];
-
+	const images = queryAll(db, 'SELECT * FROM product_images WHERE product_id = ? ORDER BY position', [id]);
+	const sizes = queryAll(db, 'SELECT size FROM product_sizes WHERE product_id = ?', [id]);
 	return rowToProduct(row, images, sizes);
 }
 
-export function createProduct(data: {
+export async function createProduct(data: {
 	title: string;
 	description: string;
 	description_html: string;
@@ -61,32 +59,33 @@ export function createProduct(data: {
 	collection: string;
 	sizes: string[];
 	images: { url: string; alt_text: string }[];
-}): Product {
-	const db = getDb();
+}): Promise<Product> {
+	const db = await initDb();
 	const id = 'gid://shopify/product/' + crypto.randomUUID().slice(0, 8);
 	const handle = slugify(data.title);
 	const now = Date.now();
 
-	db.prepare(`INSERT INTO products (id, title, handle, description, description_html, price, compare_at_price, stock, collection, status, created_at, updated_at)
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'active', ?, ?)`).run(
+	execRun(db, `INSERT INTO products (id, title, handle, description, description_html, price, compare_at_price, stock, collection, status, created_at, updated_at)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'active', ?, ?)`, [
 		id, data.title, handle, data.description, data.description_html,
 		data.price, data.compare_at_price || null, data.stock, data.collection, now, now
-	);
+	]);
 
 	for (const size of data.sizes) {
-		db.prepare('INSERT INTO product_sizes (product_id, size) VALUES (?, ?)').run(id, size);
+		execRun(db, 'INSERT INTO product_sizes (product_id, size) VALUES (?, ?)', [id, size]);
 	}
 
 	for (let i = 0; i < data.images.length; i++) {
-		db.prepare('INSERT INTO product_images (product_id, url, alt_text, position) VALUES (?, ?, ?, ?)').run(
+		execRun(db, 'INSERT INTO product_images (product_id, url, alt_text, position) VALUES (?, ?, ?, ?)', [
 			id, data.images[i].url, data.images[i].alt_text, i
-		);
+		]);
 	}
 
-	return getProduct(id)!;
+	saveDb(db);
+	return (await getProduct(id))!;
 }
 
-export function updateProduct(id: string, data: {
+export async function updateProduct(id: string, data: {
 	title: string;
 	description: string;
 	description_html: string;
@@ -96,42 +95,44 @@ export function updateProduct(id: string, data: {
 	collection: string;
 	sizes: string[];
 	images: { url: string; alt_text: string }[];
-}): Product | null {
-	const db = getDb();
-	const existing = db.prepare('SELECT * FROM products WHERE id = ?').get(id) as ProductRow | undefined;
+}): Promise<Product | null> {
+	const db = await initDb();
+	const existing = queryOne(db, 'SELECT * FROM products WHERE id = ?', [id]);
 	if (!existing) return null;
 
 	const handle = slugify(data.title);
 	const now = Date.now();
 
-	db.prepare(`UPDATE products SET title=?, handle=?, description=?, description_html=?, price=?, compare_at_price=?, stock=?, collection=?, updated_at=?
-		WHERE id=?`).run(
+	execRun(db, `UPDATE products SET title=?, handle=?, description=?, description_html=?, price=?, compare_at_price=?, stock=?, collection=?, updated_at=?
+		WHERE id=?`, [
 		data.title, handle, data.description, data.description_html,
 		data.price, data.compare_at_price || null, data.stock, data.collection, now, id
-	);
+	]);
 
-	db.prepare('DELETE FROM product_sizes WHERE product_id = ?').run(id);
+	execRun(db, 'DELETE FROM product_sizes WHERE product_id = ?', [id]);
 	for (const size of data.sizes) {
-		db.prepare('INSERT INTO product_sizes (product_id, size) VALUES (?, ?)').run(id, size);
+		execRun(db, 'INSERT INTO product_sizes (product_id, size) VALUES (?, ?)', [id, size]);
 	}
 
-	db.prepare('DELETE FROM product_images WHERE product_id = ?').run(id);
+	execRun(db, 'DELETE FROM product_images WHERE product_id = ?', [id]);
 	for (let i = 0; i < data.images.length; i++) {
-		db.prepare('INSERT INTO product_images (product_id, url, alt_text, position) VALUES (?, ?, ?, ?)').run(
+		execRun(db, 'INSERT INTO product_images (product_id, url, alt_text, position) VALUES (?, ?, ?, ?)', [
 			id, data.images[i].url, data.images[i].alt_text, i
-		);
+		]);
 	}
 
+	saveDb(db);
 	return getProduct(id);
 }
 
-export function deleteProduct(id: string): boolean {
-	const db = getDb();
-	const result = db.prepare("UPDATE products SET status = 'archived', updated_at = ? WHERE id = ?").run(Date.now(), id);
-	return result.changes > 0;
+export async function deleteProduct(id: string): Promise<boolean> {
+	const db = await initDb();
+	execRun(db, "UPDATE products SET status = 'archived', updated_at = ? WHERE id = ?", [Date.now(), id]);
+	saveDb(db);
+	return true;
 }
 
-function rowToProduct(row: ProductRow, images: ProductImageRow[], sizes: { size: string }[]): Product {
+function rowToProduct(row: any, images: any[], sizes: any[]): Product {
 	return {
 		id: row.id,
 		handle: row.handle,
@@ -142,15 +143,15 @@ function rowToProduct(row: ProductRow, images: ProductImageRow[], sizes: { size:
 			? { url: images[0].url, altText: images[0].alt_text, width: 800, height: 800 }
 			: { url: '', altText: row.title, width: 800, height: 800 },
 		images: {
-			edges: images.map((img) => ({
+			edges: images.map((img: any) => ({
 				node: { url: img.url, altText: img.alt_text, width: 800, height: 800 }
 			}))
 		},
 		options: [
-			{ name: 'Size', values: sizes.map((s) => s.size) }
+			{ name: 'Size', values: sizes.map((s: any) => s.size) }
 		],
 		variants: {
-			edges: sizes.map((s) => ({
+			edges: sizes.map((s: any) => ({
 				node: {
 					id: `v-${row.id}-${s.size.replace(/\s+/g, '-')}`,
 					title: s.size,
@@ -163,7 +164,7 @@ function rowToProduct(row: ProductRow, images: ProductImageRow[], sizes: { size:
 			}))
 		},
 		collections: { edges: [{ node: { handle: row.collection, title: row.collection.charAt(0).toUpperCase() + row.collection.slice(1) } }] },
-		seo: { title: row.title, description: row.description.slice(0, 160) },
+		seo: { title: row.title, description: (row.description || '').slice(0, 160) },
 		priceRange: {
 			minVariantPrice: { amount: String(row.compare_at_price || row.price), currencyCode: 'USD' },
 			maxVariantPrice: { amount: String(row.price), currencyCode: 'USD' }

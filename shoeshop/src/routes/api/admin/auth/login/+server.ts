@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getDb } from '$lib/server/db';
+import { initDb, queryOne } from '$lib/server/db';
 import { verifyPassword, createSession, SESSION_COOKIE } from '$lib/server/auth';
 
 export const POST: RequestHandler = async ({ request, cookies }) => {
@@ -10,14 +10,14 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		return json({ error: 'Username and password required' }, { status: 400 });
 	}
 
-	const db = getDb();
-	const admin = db.prepare('SELECT username, password_hash FROM admins WHERE username = ?').get(username) as { username: string; password_hash: string } | undefined;
+	const db = await initDb();
+	const admin = queryOne(db, 'SELECT username, password_hash FROM admins WHERE username = ?', [username]);
 
 	if (!admin || !verifyPassword(password, admin.password_hash)) {
 		return json({ error: 'Invalid credentials' }, { status: 401 });
 	}
 
-	const token = createSession(admin.username);
+	const token = await createSession(admin.username);
 	cookies.set(SESSION_COOKIE, token, {
 		path: '/',
 		httpOnly: true,
